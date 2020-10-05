@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/9 | hhyblog</title>
+  <title>python环境配置问题 | hhyblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hhyblog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/09/index.html">
+  <meta name="description" content="python环境配置问题安装的时候就会提示add path，我安装的时候没选  all users，所以好像配环境变量的时候就配的是用户变量。 暂时不太理解用户变量和系统变量有什么区别。 他人解释：系统环境变量对所有用户起作用,而用户环境变量只对当前用户起作用。 不管如何. 环境配置打开环境变量部分，只需要添加”D:\python”和”D:\python\Scripts”这两个路径添加到系统变量的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python环境配置问题">
+<meta property="og:url" content="http://yoursite.com/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="hhyblog">
+<meta property="og:description" content="python环境配置问题安装的时候就会提示add path，我安装的时候没选  all users，所以好像配环境变量的时候就配的是用户变量。 暂时不太理解用户变量和系统变量有什么区别。 他人解释：系统环境变量对所有用户起作用,而用户环境变量只对当前用户起作用。 不管如何. 环境配置打开环境变量部分，只需要添加”D:\python”和”D:\python\Scripts”这两个路径添加到系统变量的">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-03T17:18:30.737Z">
+<meta property="article:modified_time" content="2020-10-03T17:18:30.737Z">
 <meta property="article:author" content="hhy150">
 <meta name="twitter:card" content="summary">
   
@@ -150,49 +154,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python环境配置问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/08/Fundamentals-computer/" class="archive-article-date">
-  	<time datetime="2020-09-08T13:54:53.800Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/08/Fundamentals-computer/">Fundamentals-computer</a>
+    <h1 class="article-title" itemprop="name">
+      python环境配置问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-10-03T17:18:30.737Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="python环境配置问题"><a href="#python环境配置问题" class="headerlink" title="python环境配置问题"></a>python环境配置问题</h2><p>安装的时候就会提示add path，我安装的时候没选  all users，所以好像配环境变量的时候就配的是用户变量。</p>
+<p>暂时不太理解用户变量和系统变量有什么区别。</p>
+<p>他人解释：系统环境变量对所有用户起作用,而用户环境变量只对当前用户起作用。</p>
+<p>不管如何.</p>
+<h5 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h5><p>打开环境变量部分，只需要添加”D:\python”和”D:\python\Scripts”这两个路径添加到系统变量的path处。运行cmd命令验证是否配置成功。   输入<code>python</code> 命令，看是否有交互。</p>
+<h5 id="修改pip的默认包安装位置"><a href="#修改pip的默认包安装位置" class="headerlink" title="修改pip的默认包安装位置"></a>修改pip的默认包安装位置</h5><p>打开cmd,输入命令<code>python -m site</code>  查看</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ASUS&gt;python -m site</span><br><span class="line">sys.path = [</span><br><span class="line">    'C:\\Users\\ASUS',</span><br><span class="line">    'D:\\python\\python38.zip',</span><br><span class="line">    'D:\\python\\DLLs',</span><br><span class="line">    'D:\\python\\lib',</span><br><span class="line">    'D:\\python',</span><br><span class="line">    'D:\\python\\Lib\\site-packages',</span><br><span class="line">]</span><br><span class="line">USER_BASE: 'D:\\USER\\ASUS\\AppData\\Roaming\\Python' (exists)</span><br><span class="line">USER_SITE: 'D:\\USER\\ASUS\\AppData\\Roaming\\Python\\Python37\\site-packages' (exists)</span><br><span class="line">ENABLE_USER_SITE: True</span><br></pre></td></tr></table></figure>
 
+<p>主要看USER_BASE和USER_SITE内容。</p>
+<p>接着使用命令`python -m site -help，便会看到如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\ASUS&gt;python -m site -help</span><br><span class="line">D:\python\lib\site.py [--user-base] [--user-site]</span><br><span class="line"></span><br><span class="line">Without arguments print some useful information</span><br><span class="line">With arguments print the value of USER_BASE and/or USER_SITE separated</span><br><span class="line">by ';'.</span><br><span class="line"></span><br><span class="line">Exit codes with --user-base or --user-site:</span><br><span class="line">  0 - user site directory is enabled</span><br><span class="line">  1 - user site directory is disabled by user</span><br><span class="line">  2 - uses site directory is disabled by super user</span><br><span class="line">      or for security reasons</span><br><span class="line"><span class="meta"> &gt;</span><span class="bash">2 - unknown error</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>以上说明了，路径的配置是在我们安装目录下的<code>lib\site.py</code>这文件中进行配置的！那么接下来修改这个文件就可以了！</p>
+<p>修改USER_BASE和USER_SITE即可，路径到自己装python的地方，譬如说我的安装路径为<code>D:\\python</code>.那么修改路径分别为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USER_SITE &#x3D; &quot;D:\python\Lib\site-packages&quot;</span><br><span class="line">USER_BASE &#x3D; &quot;D:\python&quot;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/10/05/java%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java安装环境配置
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/06/23/Mothod-hexoBlog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用hexo搭建博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -215,8 +352,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
