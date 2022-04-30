@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>利用hexo搭建博客 | hhyblog</title>
+  <title>Linux | hhyblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="步骤：安装node.js：在官网https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F; Node.js是一个基于 Chrome V8 引擎的 JavaScript运行环境。 安装npm , cnpmnpm（Node Package Manager）是Node.js下的主流套件管理程式。 Node 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、">
+  <meta name="description" content="Linux常用命令su和sudoSudo【superuser do 超级使用者】 关于su和sudo: su 命令可以在一个登陆 session 下切换不同用户(通常是root).意思就是不需要退出当前用户的登录而切换到新用户。 ​                        su username  username 为空默认切换到root用户. 输入要登录用户密码即可。 另一种切换root用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用hexo搭建博客">
-<meta property="og:url" content="http://yoursite.com/2020/06/23/Mothod-hexoBlog/index.html">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://yoursite.com/2020/10/06/Linux/index.html">
 <meta property="og:site_name" content="hhyblog">
-<meta property="og:description" content="步骤：安装node.js：在官网https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F; Node.js是一个基于 Chrome V8 引擎的 JavaScript运行环境。 安装npm , cnpmnpm（Node Package Manager）是Node.js下的主流套件管理程式。 Node 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、">
+<meta property="og:description" content="Linux常用命令su和sudoSudo【superuser do 超级使用者】 关于su和sudo: su 命令可以在一个登陆 session 下切换不同用户(通常是root).意思就是不需要退出当前用户的登录而切换到新用户。 ​                        su username  username 为空默认切换到root用户. 输入要登录用户密码即可。 另一种切换root用">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-23T09:10:16.000Z">
-<meta property="article:modified_time" content="2020-10-05T11:03:04.156Z">
+<meta property="og:image" content="c:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211226141508515.png">
+<meta property="og:image" content="c:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211214000803250.png">
+<meta property="og:image" content="c:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210923092345792.png">
+<meta property="article:published_time" content="2020-10-05T18:03:14.747Z">
+<meta property="article:modified_time" content="2021-12-27T01:34:44.306Z">
 <meta property="article:author" content="hhy150">
+<meta property="article:tag" content="deep learning">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211226141508515.png">
   
     <link rel="alternative" href="/atom.xml" title="hhyblog" type="application/atom+xml">
   
@@ -154,67 +159,292 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mothod-hexoBlog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      利用hexo搭建博客
+      Linux
     </h1>
   
 
         
-        <a href="/2020/06/23/Mothod-hexoBlog/" class="archive-article-date">
-  	<time datetime="2020-06-23T09:10:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
+        <a href="/2020/10/06/Linux/" class="archive-article-date">
+  	<time datetime="2020-10-05T18:03:14.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><h6 id="安装node-js："><a href="#安装node-js：" class="headerlink" title="安装node.js："></a>安装node.js：</h6><p>在官网<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
-<p><strong>Node.js</strong>是一个基于 Chrome V8 引擎的 JavaScript运行环境。</p>
-<h6 id="安装npm-cnpm"><a href="#安装npm-cnpm" class="headerlink" title="安装npm , cnpm"></a>安装npm , cnpm</h6><p><strong>npm</strong>（Node Package Manager）是Node.js下的主流套件管理程式。</p>
-<p><strong>Node</strong> 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言</p>
-<p><strong>cnpm</strong> 淘宝镜像，这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v   #查看的版本</span><br><span class="line">npm -v  #查看版本</span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org #利用这个让hexo框架的下载速度更快</span><br></pre></td></tr></table></figure>
+        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="su和sudo"><a href="#su和sudo" class="headerlink" title="su和sudo"></a>su和sudo</h3><p>Sudo【superuser do 超级使用者】</p>
+<p>关于su和sudo:</p>
+<p><code>su</code> 命令可以在一个登陆 session 下切换不同用户(通常是root).意思就是不需要退出当前用户的登录而切换到新用户。</p>
+<p>​                        <code>su username</code> </p>
+<p>username 为空默认切换到root用户. 输入要登录用户密码即可。</p>
+<p>另一种切换root用户的方法就是 <code>su –</code></p>
+<p><code>-</code> 必须作为 <code>su</code> 的最后一个参数. 而 <code>-l</code> <code>-login</code> 没有该限制。</p>
+<p>su 和 su - 进入的目录是不一样的</p>
+<p>su 会保持前者的用户环境, 而 su - 会新建一个目的用户的环境</p>
+<p>su 会保持当前用户的环境, 因为在某些情况下, 使用当前用户比管理员账户能更好的解决问题. 比如重现或者debug问题时,在当前用户环境下更高效</p>
+<p>当然 su 在很多情况下是不建议使用的, 或者说是相当危险的. 因为 root 用户要在当前用户的环境下操作, 而不是自己的环境. 因为这会给非 root 用户 更改系统文件或数据的权限</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211226141508515.png" alt="image-20211226141508515"></p>
+<p>Sudo和su区别：</p>
+<p>最大的不同就是所需要的密码不同: sudo 需要的是当前用户的密码,而 su 命令需要的是 管理员的密码.</p>
+<p>Sudo只是一个临时获取的root权限</p>
+<p>sudo 命令比 su 命令更安全. su 命令需要其他用户也知道 root 密码, 而 sudo 只需要配置 sudoers file 即可, 而且可以随时删除特定用户的权限.</p>
+<p>hhy@LAPTOP-3ITN966I:~$ su</p>
+<p>Password:</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# su -  # 转到~目录，下面什么也没有</p>
+<p>root@LAPTOP-3ITN966I:~# ls -l /etc/sudoers</p>
+<p>-r–r—– 1 root root 755 Jan 18 2018 /etc/sudoers</p>
+<p>root@LAPTOP-3ITN966I:~# ls  </p>
+<p>root@LAPTOP-3ITN966I:~#</p>
+<p><strong>ifconfig**</strong>一般需要<strong><strong>root</strong></strong>权限**</p>
+<p>hhy@LAPTOP-3ITN966I:~$ ifconfig eth0 up</p>
+<p>SIOCSIFFLAGS: Operation not permitted</p>
+<p>` <code>ssh</code>登陆<code>linux</code>服务器操作``？```</p>
+<p>XX先不了解。像是配置git。</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# cat /etc/sudoers</p>
+<p>#</p>
+<p># This file MUST be edited with the ‘visudo’ command as root.</p>
+<p>#</p>
+<p># Please consider adding local content in /etc/sudoers.d/ instead of</p>
+<p># directly modifying this file.</p>
+<p>#</p>
+<p># See the man page for details on how to write a sudoers file.</p>
+<p>#</p>
+<p>Defaults  env_reset</p>
+<p>Defaults  mail_badpass</p>
+<p>Defaults  secure_path=”/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin”</p>
+<p># Host alias specification</p>
+<p># User alias specification</p>
+<p># Cmnd alias specification</p>
+<p># User privilege specification</p>
+<p>root  ALL=(ALL:ALL) ALL</p>
+<p><strong>用户账号</strong>   <strong>登陆者来源主机名</strong> <strong>=**</strong>（能够切换的身份）**     <strong>可运行的命令</strong></p>
+<p># Members of the admin group may gain root privileges</p>
+<p>%admin ALL=(ALL) ALL</p>
+<p># Allow members of group sudo to execute any command</p>
+<p>%sudo  ALL=(ALL:ALL) ALL</p>
+<p># See sudoers(5) for more information on “#include” directives:</p>
+<p>#includedir /etc/sudoers.d</p>
+<p>如何在sudoers文件中添加</p>
+<p>在 <code>sudoers file</code> 里面添加该用户？</p>
+<p>用root权限 可以改变文件权限，然后添加进去后再修改回权限。</p>
+<p>在root ALL=(ALL:ALL) ALL 下面添加一行,yourName 就是你的用户名:</p>
+<p>yourName  ALL=(ALL)AL</p>
+<p>创建用户：</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211214000803250.png" alt="image-20211214000803250"></p>
+<h3 id="make"><a href="#make" class="headerlink" title="make"></a>make</h3><p><a href="https://www.cnblogs.com/hazir/p/linux_make_examples.html" target="_blank" rel="noopener">https://www.cnblogs.com/hazir/p/linux_make_examples.html</a></p>
+<h3 id="关于Linux中的用户操作："><a href="#关于Linux中的用户操作：" class="headerlink" title="关于Linux中的用户操作："></a>关于Linux中的用户操作：</h3><p>（1）通过/etc/passwd 来查看用户相关信息：</p>
+<p>1、目前自己创建的用户：</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# cat /etc/passwd</p>
+<p>hhy : x:1000:1000:,,,:/home/hhy:<strong>/bin/bash</strong></p>
+<p><strong>snort</strong> : x:999:1001:SNORT_IDS:/home/snort:/sbin/nologin</p>
+<p><strong>B19070208:</strong> x :1001:1002::/home/B19070208:<strong>/bin/sh</strong></p>
+<p><strong>s01</strong>: x :1002:1003::/home/s01:<strong>/bin/sh</strong></p>
+<p><strong>s02</strong>: x :1003:1003::/home/s02:<strong>/bin/sh</strong></p>
+<p>举例解析：</p>
+<p><strong>snort: x :999:1001:SNORT_IDS:/home/snort:/sbin/nologin</strong></p>
+<p>用户名(<strong>snort</strong>)</p>
+<p>密码(x) 存储在/etc/shadow</p>
+<p>用户 ID（<strong>999</strong>）：代表用户的 ID 号，每个用户都要有一个唯一的 ID 。UID 号为 0 的是为 root 用户保留的，UID 号 1 到 99 是为系统用户保留的，UID 号 100-999 是为系统账户和群组保留的。</p>
+<p>群组 ID （<strong>1001</strong>）：代表群组的 ID 号，每个群组都要有一个唯一的 GID ，保存在 /etc/group文件中。</p>
+<p>用户信息（<strong>SNORT_IDS</strong>）：代表描述字段，可以用来描述用户的信息</p>
+<p>家目录（<strong>/home/snort</strong>）：代表用户的家目录。</p>
+<p>Shell（<strong>/sbin/nologin</strong>）：代表用户使用的 shell 类型。</p>
+<p>2、目前创造的组：</p>
+<p>如何查看所有的组啊？</p>
+<p>hhy: x :1000:</p>
+<p>snort: x :1001:</p>
+<p>B19070208: x :1002:</p>
+<p>student: x :1003:</p>
+<p>3、useradd和adduser的区别：</p>
+<p>useradd是一个<strong>Linux</strong>命令，但是它提供了很多参数在用户使用的时候根据自己的需要进行设置；而adduser是一个<strong>perl</strong> 脚本，在使用的时候会出现类似人机交互的界面，提供选项让用户填写和选择，这个命令比起useradd来说比较简单，也比较傻瓜。</p>
+<p>区别1：adduser比较人性化，不是Linux命令。</p>
+<p>​                               </p>
+<p>区别2：使用shell不同</p>
+<p>adduser命令有规范的，以下是不规范的命名格式：</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# adduser B</p>
+<p>adduser: Please enter a username matching the regular expression configured</p>
+<p>via the NAME_REGEX[_SYSTEM] configuration variable. Use the `–force-badname’</p>
+<p>option to relax this check or reconfigure NAME_REGEX.</p>
+<p>/bin/sh:</p>
+<p>/bin/bash:</p>
+<p>此外，adduser好像会在home下面帮你创建一个文件夹，不知道useradd会不会？？？</p>
+<p>目前推荐使用adduser 【perl脚本的】</p>
+<h3 id="清除Linux历史命令："><a href="#清除Linux历史命令：" class="headerlink" title="清除Linux历史命令："></a>清除Linux历史命令：</h3><p>history-w </p>
+<p>就是用内存中的历史命令覆盖 .bash_histroy 文件的内容，这样，即使 Shell 重新加载也加载不到任何命令了，因为此时 .bash_history 文件中已经空空如也了。</p>
+<h3 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hhy@LAPTOP-3ITN966I:~$ sudo su root</span><br><span class="line">[sudo] password for hhy:</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# passwd</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy#</span><br></pre></td></tr></table></figure>
 
-<h6 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h6><p>利用cnpm安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v  #查看版本</span><br><span class="line">cnpm install -g hexo-cli #下载hexo框架</span><br></pre></td></tr></table></figure>
 
-<h6 id="创建一个目录"><a href="#创建一个目录" class="headerlink" title="创建一个目录"></a>创建一个目录</h6><p>这个目录就是专门存储博客的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo -v #查看版本</span><br><span class="line">mkdir blog #创建一个目录blog，文件夹</span><br><span class="line">hexo init #在这个路径下初始化（windows系统上，下载文件到新目录上）</span><br><span class="line"></span><br><span class="line">hexo s  #启动，可以在localhost:4000上访问了。</span><br><span class="line">（ctrl+c断开进行的程序）</span><br><span class="line">dir  #查看本目录中的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hexo s  #启动hexo</span><br><span class="line">hexo clean  #清理</span><br><span class="line">hexo g  #生成</span><br><span class="line">hexo d  #部署到远程的仓库里面。</span><br></pre></td></tr></table></figure>
 
-<h6 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h6><p>创建一个新的repositories：</p>
-<p>   <strong>必须</strong>命名为：自己github账号.github.io      e.g:  hhy150.github.io</p>
-<p>修改配置：</p>
-<p>   特别注意修改的时候每个冒号之后都有一个空格</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改config.yml文件：在deploy下面，修改如下：</span><br><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/hhy150/hhy150.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-3ITN966I:/bin# cat /etc/passwd</span><br><span class="line">root:x:0:0:root:/root:/bin/bash  # 默认使用bash</span><br></pre></td></tr></table></figure>
 
-<p>  安装关于git的插件，帮助我们推到仓库上</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnmp install --save hexo-deployer-git  #安装一个插件</span><br></pre></td></tr></table></figure>
-
-<p>再执行：</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清理database。</span><br><span class="line">hexo generate  #生成</span><br><span class="line">hexo d    #部署，全称：hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h6 id="修改主题："><a href="#修改主题：" class="headerlink" title="修改主题："></a>修改主题：</h6><ul>
-<li><p>先下载相关文档</p>
-</li>
-<li><p>再修改配置文件</p>
-</li>
-<li><p>最后远程部署</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在github上https://github.com/litten/hexo-theme-yilia下载</span></span><br><span class="line"><span class="meta">#</span><span class="bash">下载到themes/yilia路径下</span></span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">改变配置文件：</span></span><br><span class="line"><span class="meta">#</span><span class="bash">themes: landscape</span></span><br><span class="line"><span class="meta">#</span><span class="bash">成themes: yilia</span></span><br><span class="line"></span><br><span class="line">hexo s  #启动hexo</span><br><span class="line">hexo clean  #清理</span><br><span class="line">hexo g  #生成静态网页</span><br><span class="line">hexo d  #部署到远程的仓库里面。</span><br></pre></td></tr></table></figure>
-
-<h6 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n "title"</span><br></pre></td></tr></table></figure>
-
-<h6 id="如何更新博客"><a href="#如何更新博客" class="headerlink" title="如何更新博客"></a>如何更新博客</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先在<span class="built_in">source</span>/_posts下的添加文件/修改文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash">或者在命令行到这个目录下创建。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">打开命令窗口</span></span><br><span class="line">d:       #切换到d盘下</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">应该是下列四个步骤，不可以启动后直接hexo d 部署</span></span><br><span class="line">hexo s   #走到blog目录下，启动hexo</span><br><span class="line"><span class="meta">#</span><span class="bash">（Ctrl + c 关闭）</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="gcc编译"><a href="#gcc编译" class="headerlink" title="gcc编译"></a>gcc编译</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ gcc -c  exp31.c</span><br><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ gcc -o exp31 exp31.o</span><br><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ ls</span><br><span class="line">exp31  exp31.c  exp31.o</span><br><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ ./exp31</span><br></pre></td></tr></table></figure>
 
 
 
-</li>
+<p>为什么exp31可以直接执行？已经有x执行权限了。</p>
+<h3 id="删除非空文件"><a href="#删除非空文件" class="headerlink" title="删除非空文件"></a>删除非空文件</h3><p>删除一个不为空的文件夹就是 <code>rm -rf XXX</code></p>
+<p>其中-r recursion表示向下递归，不管多少级目录，一并删除。</p>
+<p>-f force表示直接强行删除，不做任何提示。</p>
+<p>注意：不是rmdir -rf XXX</p>
+<h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2><p>关于变量问题：</p>
+<p>（1）目前好像是加单引号，双引号，以及不加，输出结果相同。shell中是不指定数据类型的，根据参与的运算决定。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]# a=hello</span><br><span class="line">[root@server ~]# echo $a</span><br><span class="line">hello</span><br><span class="line">[root@server ~]# b='hello'</span><br><span class="line">[root@server ~]# echo $b</span><br><span class="line">hello</span><br><span class="line">[root@server ~]# c="hello"</span><br><span class="line">[root@server ~]# echo $c</span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">换成数字：也是没有什么区别的</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# var1='1'</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# expr $var1 + 1</span><br><span class="line">2</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# var1="1"</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# expr $var1 + 1  </span><br><span class="line">2</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# expr $var1+1</span><br><span class="line">1+1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>所以定义变量的时候，单双引号以及啥也不加会有什么区别呢？？？</p>
+<p>（2）变量的计算需要用expr命令，而且表达式运算符和数字必须有空格。</p>
+<p>关于运算符<br>运算符号    含义<br>+，-    加法，减法<br><em>，/，%    乘，除，取余<br>*</em>    幂运算<br>++，–    自增加，自减少<br>&lt;, &lt;=, &gt;, &gt;=    比较符号<br>=, +=, -=, *=, /=, %=    赋值运算<br>shell中常用的运算命令<br>运算操作与运算命令    含义<br>(( ))    用于整数运算<br>let    用于整数运算,与(())类似<br>expr    用于整数运算,功能相对较多<br>bc    linux下的计算器，适合小数及整数运算<br>$[ ]    用于整数运算</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>E45: ‘readonly’ option is set (add ! to override)</p>
+<p>不修改文件，直接退出 :q!</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><strong>rpm -qa | grep openssl</strong>  ＃[搜索指定rpm包是否安装]</p>
+<p><strong>rpm</strong>：RPM是以一种数据库记录的方式将所需要的软件安装到Linux主机的一套管理程序</p>
+<p>rpm -ivh 软件包名 #安装软件包并显示安装进度</p>
+<p>rpm -qa 查询已经安装那些软件包</p>
+<p>grep是“global search regular expression and print out the line”的简称，意思是全面搜索正则表达式，并将其打印出来。这个命令可以结合正则表达式使用，它也是linux使用最为广泛的命令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --justdb --nodeps &lt;yourpackage&gt;</span><br></pre></td></tr></table></figure>
+
+<p>rm -rf openssl-fips-2.0.16 强力删除openssl-fips-2.0.16</p>
+<table>
+<thead>
+<tr>
+<th>安装Linux桌面后终端无法打开</th>
+<th>将系统语言改成英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>hexdump是Linux下的一个二进制文件查看工具，可以将二进制文件转换为ASCII、10进制、16进制或8进制进行查看。</p>
+<p>常用选项：</p>
+<p>-b  将每个字节显示为8进制<br>-c  将每个字节显示为ASCII字符<br>-C  每个字节显示为16进制和相应的ASCII字符</p>
+<p>-d  每两个字节显示为10进制<br>-o  每两个字节显示为8进制<br>-x  每两个字节显示为16进制</p>
+<h2 id="网络知识"><a href="#网络知识" class="headerlink" title="网络知识"></a>网络知识</h2><p><strong>“ifconfig是用在LINUX或UNIX中的,IPCONFIG是用在WINDOWS中的,都是用来显示网卡信息的,只不过不同系统用不同的命令而已!!!”</strong></p>
+<p>192.168.2.0/24   </p>
+<p>192.168.2.0换成32位二进制，四组，每组8位</p>
+<p><strong>/24 表示前24位不变</strong></p>
+<h2 id="shell命令行"><a href="#shell命令行" class="headerlink" title="shell命令行"></a>shell命令行</h2><p><strong>补充知识：</strong></p>
+<p>Linux只有根目录，没有C盘，D盘这些概念，要访问需要<strong>挂载</strong></p>
+<p><strong>桥接方式</strong>可以正常上网，</p>
+<p>桌面版有界面</p>
+<p>git命令</p>
+<p>做web开发要用图形界面。</p>
+<p>Linux采用的是树形结构。根目录</p>
+<p>硬件对应的就是一个文件。</p>
+<p>比如说打印机，虚拟文件系统，Linux将硬件和一个文件对应</p>
+<p>Linux比较稳定，比windows稳定。</p>
+<p>shell是在与Linux交互的界面。</p>
+<p>shell维护一个命令库</p>
+<p>shell的类型：</p>
+<p>shell负责和Linux内核进行交互。</p>
+<p>shell命令分类：</p>
+<ul>
+<li>外部命令</li>
+<li>内部命令</li>
 </ul>
+<h4 id="shell的注释："><a href="#shell的注释：" class="headerlink" title="shell的注释："></a><strong>shell的注释</strong>：</h4><p>单行注释和多行注释</p>
+<p>单行注释：# </p>
+<p>多行注释：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> :&lt;&lt;!</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="comment">#被注释的内容</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> !</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf *   #代表删除当前目录下所有文件 rm -rf XX可以删除指定文件</span><br><span class="line">rm -rf .git  # 删除.git文件</span><br></pre></td></tr></table></figure>
+
+<h4 id="git相关"><a href="#git相关" class="headerlink" title="git相关"></a>git相关</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "邮箱@example.com"</span><br></pre></td></tr></table></figure>
+
+
+
+<p>获得命令帮助</p>
+<p>$ man ls  # 用manual，表示用man命令来获取ls 命令的帮助</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ubuntu安装wget</span></span><br><span class="line">apt-get update  </span><br><span class="line">apt-get install wget  </span><br><span class="line">wget --version  </span><br><span class="line"><span class="meta">#</span><span class="bash">Ubuntu 里的 apt 工具</span></span><br><span class="line"><span class="meta">#</span><span class="bash">apt-get是一条linux命令,适用于deb包管理式的操作系统,主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">tar</span></span><br><span class="line">tar xvfz daq-2.0.6.tar.gz      #xvfz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">pwd</span> 查看目录 <span class="built_in">print</span> working directory</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> --<span class="built_in">enable</span> 是启用软件源码包自带 --<span class="built_in">enable</span>-包名[=arg]，但是默认不启用的功能模块。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装snort</span></span><br><span class="line">tar -xvzf snort-2.9.11.tar.gz</span><br><span class="line">cd snort-2.9.11</span><br><span class="line">./configure --enable-sourcefile</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>解析tar命令行</p>
+<p>-x 或者–extract或者–get 从备份中还原文件</p>
+<p>-v 或者–verbose 显示指令执行过程</p>
+<p>-f &lt;备份文件&gt; 指定备份文件</p>
+<p>-z 或者–gzip或者–ungzip 通过gzip指令处理备份文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> &amp;&amp; 表示前一条命令执行成功时，才执行后一条命令。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Linux 下 make 命令是系统管理员和程序员用的最频繁的命令之一。管理员用它通过命令行来编译和安装很多开源的工具，程序员用它来管理他们大型复杂的项目编译问题。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">ldconfig是一个动态链接库管理命令，为了让动态链接库为系统所共享,还需运行动态链接库的管理命令--ldconfig</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ldconfig</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ln -s /usr/<span class="built_in">local</span>/bin/snort       /usr/sbin/snort</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> snort -V</span></span><br><span class="line">   ,,_     -*&gt; Snort! &lt;*-</span><br><span class="line">  o"  )~   Version 2.9.18.1 GRE (Build 1005)</span><br><span class="line">   ''''    By Martin Roesch &amp; The Snort Team: http://www.snort.org/contact#team</span><br><span class="line">           Copyright (C) 2014-2021 Cisco and/or its affiliates. All rights reserved.</span><br><span class="line">           Copyright (C) 1998-2013 Sourcefire, Inc., et al.</span><br><span class="line">           Using libpcap version 1.8.1</span><br><span class="line">           Using PCRE version: 8.39 2016-06-14</span><br><span class="line">           Using ZLIB version: 1.2.11</span><br><span class="line"><span class="meta">#</span><span class="bash">表明安装成功</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加用户组 ，删除：groupdel</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo groupadd snort</span></span><br><span class="line"><span class="meta">#</span><span class="bash">添加用户 ，删除：userdel</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort</span></span><br></pre></td></tr></table></figure>
+
+<p>补充：</p>
+<p>-g 分到指定的用户组</p>
+<p>-c(comments)     备注，加上备注文字</p>
+<p>-r 建立系统账号（root)</p>
+<p>-s 指定用户登录后使用的shell</p>
+<blockquote>
+<p>小知识：</p>
+<blockquote>
+<p>adduser和useradd的区别：</p>
+</blockquote>
+<p>adduser： 会自动为创建的用户指定主目录、系统shell版本，会在创建时输入用户密码。</p>
+<p>useradd：需要使用参数选项指定上述基本设置，如果不使用任何参数，则创建的用户无密码、无主目录、没有指定shell版本。</p>
+</blockquote>
+<p>snort的相关文件:</p>
+<p>etc下面：</p>
+<pre><code>classification.config    : 描述了Snort理解的攻击分类类型（将规则分组为这些类型的分类），例如木马活动或系统调用检测。分类列表可以在Snort手册的第3.4.6节中找到
+file_magic.conf            : 描述了用于标识文件类型的规则
+reference.config        : 包含提供有关警报的更多信息的规则中引用的URL
+snort.conf                : 是Snort的配置文件，它告诉Snort资源的位置，以及如何输出警报等
+threshold.conf            : 允许您控制生成警报所需的事件数，这有助于抑制噪声警报    
+gen-msg.map                : 告诉Snort哪个规则使用哪个预处理器,更多信息在这里。
+unicode.map                : 提供Unicode语言和标识符之间的映,nSnort需要此文件才能启动。</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 它的功能是为某一个文件在另外一个位置建立一个同不的链接，这个命令最常用的参数是-s,具体用法是：ln -s 源文件 目标文件</span></span><br><span class="line">ln -s /usr/local/bin/snort /usr/sbin/snort</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">sudo su 运行sudo命令给su命令提权，运行su命令。要求执行该命令的用户必须在sudoers中才可以。</span></span><br><span class="line">sudo su </span><br><span class="line"><span class="meta">#</span><span class="bash">请输入密码：</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><strong>小知识:</strong></p>
+<blockquote>
+<p>sudo su 和 su区别：</p>
+<p>su是申请root用户，ubuntu，默认没有设置root用户的密码，所以需要我们先使用<code>sudo passwd root</code>设置root用户密码。</p>
+<p>sudo su是转换成管理员</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置root的UNIX的密码，此处设置为123</span></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ sudo passwd root</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo su让输入user的密码</span></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ sudo su</span><br><span class="line">root@LAPTOP-3ITN966I:/# exit</span><br><span class="line">exit</span><br><span class="line"><span class="meta">#</span><span class="bash"> su输入UNIX的密码</span></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ su</span><br><span class="line">Password:</span><br><span class="line">root@LAPTOP-3ITN966I:/# exit</span><br><span class="line"><span class="meta">#</span><span class="bash">我是谁</span></span><br><span class="line">root@LAPTOP-3ITN966I:/# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>-f 强制force</p>
+<p>-r 递归recursive</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="comment">#号表示超级管理员，$号表示基本用户</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Ubuntu中sudo命令，默认创建者就是超级管理员</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> centos进去直接就是超级管理员<span class="comment">#</span></span></span><br><span class="line">hhy@LAPTOP-3ITN966I:~$ ls -a #看到隐藏文件</span><br><span class="line">.   .bash_history  .bashrc  .config  .profile                   .vim      .vscode-server  daq-2.0.7   snort-2.9.18.1</span><br><span class="line">..  .bash_logout   .cache   .local   .sudo_as_admin_successful  .viminfo  .wget-hsts      helloworld</span><br><span class="line"></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ ls -l</span><br><span class="line">total 416  #指当前目录下所有文件所占用的空间总和，单位为k。可以使用ls –lh或者ls –alh查看。</span><br><span class="line"><span class="meta">#</span><span class="bash">属性.硬链接数.拥有者.所在组.占空间.最近访问时间.文件名</span></span><br><span class="line">drwxr-xr-x   2 root root   4096 Apr 10 11:03 bin</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 boot</span><br><span class="line">drwxr-xr-x   8 root root   2720 Sep  6 21:24 dev</span><br><span class="line">drwxr-xr-x  93 root root   4096 Sep  6 21:24 etc</span><br><span class="line">drwxr-xr-x   3 root root   4096 Apr 10 10:39 home</span><br><span class="line">-rwxr-xr-x   3 root root 632048 Jun 19 12:37 init</span><br><span class="line">drwxr-xr-x  20 root root   4096 Apr 10 11:05 lib</span><br><span class="line">drwxr-xr-x   2 root root   4096 Apr 10 11:03 lib64</span><br><span class="line">drwx------   2 root root  16384 Apr 11  2019 lost+found</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 media</span><br><span class="line">drwxr-xr-x   7 root root   4096 Apr 10 10:38 mnt</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 opt</span><br><span class="line">dr-xr-xr-x 117 root root      0 Sep  6 21:24 proc</span><br><span class="line">drwx------   2 root root   4096 Sep  6 18:46 root</span><br><span class="line">drwxr-xr-x   8 root root    160 Sep  6 21:24 run</span><br><span class="line">drwxr-xr-x   2 root root  12288 Apr 10 11:03 sbin</span><br><span class="line">drwxr-xr-x   2 root root   4096 Jul 10  2020 snap</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 srv</span><br><span class="line">dr-xr-xr-x  11 root root      0 Sep  6 21:24 sys</span><br><span class="line">drwxrwxrwt   5 root root   4096 Sep  6 12:28 tmp</span><br><span class="line">drwxr-xr-x  10 root root   4096 Aug 22  2020 usr</span><br><span class="line">drwxr-xr-x  13 root root   4096 Aug 22  2020 var</span><br></pre></td></tr></table></figure>
+
+<p>drwxr-xr-x</p>
+<p>directory+ 三个一组（三组）</p>
+<p>第一组：文件所属者</p>
+<p>第二组：</p>
+<p>第三组：</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210923092345792.png" alt="image-20210923092345792"></p>
+<p>修改权限：</p>
+<p>chmod</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]# chmod 777 demo</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="安装snort"><a href="#安装snort" class="headerlink" title="安装snort"></a>安装snort</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 从根目录开始 /etc/snort/</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/rules/iplists</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/preproc_rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /usr/local/lib/snort_dynamicrules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/so_rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo touch /etc/snort/rules/iplists/default.balcklist</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo touch /etc/snort/rules/iplists/default.whitelist</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo touch /etc/snort/rules/local.rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /var/log/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /var/log/snort/archived_logs</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">利用 chmod 可以藉以控制档案如何被他人所调用。只能文件属主或特权用户才能使用该功能来改变文件存取模式。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">chmod [-cfvR] [--<span class="built_in">help</span>] [--version] mode file...</span></span><br><span class="line"><span class="meta">#</span><span class="bash">调整权限</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /etc/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /var/log/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /var/log/snort/archived_logs</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /etc/snort/so_rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /usr/local/lib/snort_dynamicrules</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Linux chown（英文全拼：change owner）命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash">改变文件属主</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chown -R snort:snort /etc/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chown -R snort:snort /var/log/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chown -R snort:snort</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>chmod</p>
+<p>chown</p>
+</blockquote>
+<p>蓝色的是目录文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">root&#x2F;</span><br><span class="line">    bin # 所有用户可用执行文件</span><br><span class="line">    sbin #系统管理员用的执行文件</span><br><span class="line">    boot&#x2F; </span><br><span class="line">    dev #所有设备文件，包括字符设备等</span><br><span class="line">    etc &#x2F; #系统配置文件</span><br><span class="line">        ......</span><br><span class="line">		snort&#x2F;</span><br><span class="line">			preproc_rules  </span><br><span class="line"> 		    rules&#x2F;</span><br><span class="line"> 		    	iplists&#x2F;</span><br><span class="line"> 		    		default.balcklist  </span><br><span class="line">            	    default.whitelist</span><br><span class="line"> 		    	local.rules</span><br><span class="line">            so_rules</span><br><span class="line">    root</span><br><span class="line">    usr&#x2F;</span><br><span class="line">    	bin  #用户命令工具</span><br><span class="line">    	games  </span><br><span class="line">    	include  #C头文件</span><br><span class="line">    	lib  #函数库</span><br><span class="line">    	local  </span><br><span class="line">    	sbin  #系统命令工具</span><br><span class="line">    	share  </span><br><span class="line">    	src  #源代码目录</span><br><span class="line">    mnt	#挂载点Mount point</span><br><span class="line">    home #普通用户的默认管理目录</span><br><span class="line">    lib # 共享库，供&#x2F;bin和&#x2F;sbin的文件使用</span><br><span class="line">    lost+found</span><br><span class="line">    proc #</span><br><span class="line">    run </span><br><span class="line">    snap </span><br><span class="line">    sys </span><br><span class="line">    init </span><br><span class="line">    lib64 </span><br><span class="line">    media </span><br><span class="line">    opt </span><br><span class="line">    srv </span><br><span class="line">    tmp </span><br><span class="line">    var</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/snort3/libdaq/archive/refs/tags/v3.0.4.tar.gz -O libdaq-3.0.4.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 竟然是大写的O</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -O啥意思 file</span></span><br><span class="line"></span><br><span class="line">sudo apt-get install -y</span><br><span class="line"><span class="meta">#</span><span class="bash">       -y, --yes, --assume-yes 默认都yes</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>到底有啥用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig</span><br><span class="line"><span class="meta">#</span><span class="bash">ldconfig命令的用途：主要是在默认搜寻目录(/lib和/usr/lib)以及动态库配置文件/etc/ld.so.conf内所列的目录下，搜索出可共享的动态链接库(格式如前介绍，lib*.so*)，进而创建出动态装入程序(ld.so)所需的连接和缓存文件。缓存文件默认为 /etc/ld.so.cache，此文件保存已排好序的动态链接库名字列表。</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -294,7 +524,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/23/Mothod-hexoBlog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/06/Linux/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -308,18 +538,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/09/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          python环境配置问题
+          安卓开发
         
       </div>
     </a>
   
   
-    <a href="/2020/06/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/10/05/java%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java安装环境配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -362,7 +592,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 hhy150
+    		&copy; 2022 hhy150
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

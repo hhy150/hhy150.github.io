@@ -8,12 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>hhyblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="record  and grow up">
+<meta property="og:type" content="website">
 <meta property="og:title" content="hhyblog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="hhyblog">
+<meta property="og:description" content="record  and grow up">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="hhy150">
+<meta property="article:tag" content="deep learning">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="hhyblog" type="application/atom+xml">
@@ -152,27 +155,171 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-火车栈问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Summer project HW" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/05/%E7%81%AB%E8%BD%A6%E6%A0%88%E9%97%AE%E9%A2%98/">火车栈问题</a>
+      <a class="article-title" href="/2021/09/05/Summer%20project%20HW/">Summer project HW</a>
     </h1>
   
 
         
-        <a href="/2020/10/05/%E7%81%AB%E8%BD%A6%E6%A0%88%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-10-05T08:38:22.292Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
+        <a href="/2021/09/05/Summer%20project%20HW/" class="archive-article-date">
+  	<time datetime="2021-09-05T06:29:23.527Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>火车栈问题：</p>
+        <h2 id="Summer-project-HW"><a href="#Summer-project-HW" class="headerlink" title="Summer project HW"></a>Summer project HW</h2><h2 id="HW1"><a href="#HW1" class="headerlink" title="HW1"></a>HW1</h2><p><strong>classic cryptography and modern arithmatic</strong></p>
+<p>1) You are given a ciphertext encrypted under Caesar cipher: “ibbiks eqbp nctt nwzkm ia awwv ia bpm acv zqama”. Recover the key and the plaintext.</p>
+<p>ibbiks eqbp nctt nwzkm ia awww ia bpm acv zqama</p>
+<p>key=8</p>
+<p>plaintext: attack with full force as soon as the sun rises</p>
+<p>2) Ceasar cipher: suppose that Alice and Bob generates three keys and uses triple encryption.  That is, they encrypt the message using the first key, then encrypt the result using the 2nd key, then encrypt the result again using the 3rd key using a Ceasar cipher. Is this secure? Show a way to break it.</p>
+<p>It is not security: the difference between one keys is the change steps about each letter,so we can use the same way to break it.</p>
+<p>the solution is brute force attack:Firstly,we should get the ciphertext.secondly,we try all the possible keys, and see whether the possible plaintext make sense.</p>
+<p>3) Compute 3292213^41 mod 100. How many multiplications did you require? How many digits did the numbers (which you had to multiply) had? Try to make it as efficient as you can.</p>
+<p>3292213 mod 100=13</p>
+<p>13^2 mod 100 =3292213^2 mod 100=69</p>
+<p>69^2 mod 100=3292213^4 mod 100=61</p>
+<p>61^2 mod 100=3292213^8 mod 100=21</p>
+<p>21^2 mod 100=3292213^16 mod 100=41</p>
+<p>41^2 mod 100=3292213^32 mod 100=81</p>
+<p>hence:41 = 32+8+1</p>
+<p>3292213^41 mod 100=（81 * 21 * 13）mod 100=13</p>
+<p>8 Multiplication.</p>
+<p>digits: 2 </p>
+<p>4) Compute Discrete log of y=6 with respect to base g = 5 and modulas N = 7.</p>
+<p>brutal force：</p>
+<p>5^1 mod 7=5</p>
+<p>5^2 mod 7=4</p>
+<p>5^3 mod 7=6</p>
+<p>x=3</p>
+<p>5) (no need to submit): Read and understand notions of digital signatures, public key encryption, and key exchange. Understand the differences between these.</p>
+<p>digital signature use the private key to encrypt the message，and form a signauture. the other person use public key and message and signature to verify the message is sended by correct person.</p>
+<p>The proecess is similar to an inverse process about Encrypted communication.</p>
+<h2 id="HW2"><a href="#HW2" class="headerlink" title="HW2"></a>HW2</h2><p><strong>OTP and Digital signature</strong> </p>
+<p>1) Alice and Bob want to write encrypted messages in an e-diary. They agree on the following convention: (1) all messages of Alice will start with n 0s, whereas (2) all messages of Bob will end with n 0s. Thus, if Alice wants to write a message m, she will encrypt the message 0^n || m (where 0^n is a string of n 0s, and || denotes concatenation). </p>
+<p>Likewise, Bob’s messages will be of the form m || 0^n. Assume that the actual message m is also of length n and m is not equal to 0^n. Note that with this encoding, each string that Alice and Bob write in the diary is of length 2n. To encrypt the message, Alice and Bob agree to use one-time pad and jointly select a random key k of length 2n which they will use to encrypt and write their strings to the diary.</p>
+<p>Show that this scheme is completely insecure. In particular, show how to recover the key k completely.</p>
+<p>For one time pad, the key can’t be reused .</p>
+<p>The attacker can get the  ciphertexts  sent by Alice and Bob to each other.</p>
+<p>Alice write a message m1, she encrypt the message 0^n || m1, mark the 0^n as M1.Then:C1=M1⊕ K1 . The attacker know the  so the Key can be calculate：K1=C1⊕M1.In this way, we can get the first half of the Key.</p>
+<p>Similary,Bob write a message m2 to Alice, he encrypt the message m2||0^n. Then：C2=M2⊕ K2.Hence：K2=C2⊕ M2.K2 is the second half of the Key.</p>
+<p>So we get the K combinated with K1 and K2.</p>
+<p>For example: </p>
+<p>n=6  ,MA=000000XXXXXX, MB=XXXXXX000000 , C1=101101001011, C2=001011110010</p>
+<p>Then:K1=101101   K2=110010  K=101101110010 </p>
+<p>C1⊕ C2=100110111001,MA=000000111001 ,MB=100110000000</p>
+<p><strong>TA’s answer:</strong> We observe the property of one-time pad: if you encrypt an all 0 string, then the ciphertext is equal to the key itself. This is because XORing with 0 doesn’t change any string.<br>With this observation, if the first n bits of Alice’s message are 0, then the first n bits of the ciphertext will be equal to the first n bits of the key. This allows an attacker to recover the first n bits of the key by looking at the ciphertext written by Alice.<br>Similarly, by looking at the ciphertext written by Bob, the adversary can recover the last n bits of the key. Now the adversary has the full key and can decrypt anything.</p>
+<p>2) Alice and Bob would like to communicate securely. Each day, Alice will send exactly one message to Bob: “ATTACK” or “DEFEND”. An adversary should not be able to change the message which Alice sends to Bob. Neither should the adversary be able to see it. Describe a solution which would work. You can assume all cryptographic objects which we have studied so far.</p>
+<p>(1)One method is using HTTPS  to communicate with each other, but one side maybe ask the third party certification authority for CA.</p>
+<p>还要使用时间戳防止重放攻击。</p>
+<p>(2)sign firstly and then encrypt and lastly sign . Use one time signature to sign and  asymmetric encryption to encrypt.Double signature can avoid adversary tampering with identity，and encryption can avoid adversary see the message.</p>
+<p>Firstly, use SK sign message as S .</p>
+<p>Secondly, use public key encrypt S and M as C.</p>
+<p>Thirdly, receiver use private key decrypt C.</p>
+<p>Fourthly,reuse SK  sign C as S’ ,and send S’ to the receiver.</p>
+<p><strong>TA’s answer:</strong>HTTPS and digital signature<br>Simply use an encryption scheme (like one-time pad) to hide the message. To ensure that the adversary can’t change it, use digital signatures. So Alice and Bob meet first and share keys for one-time pad. In addition, Alice stores Bob’s digital signature verification key and Bob stores Alice’s. Then if Alice wants to send a message to Bob, she would encrypt it first and then sign the ciphertext and send it across. Bob can can do the same. Note that using encryption scheme alone is not secure. For example, in one-time pads, if you change the first bit of the ciphertext, it changes the first bit of the plaintext (even though you don’t know what the first bit is). </p>
+<p>3) We used the XOR gate for one-time pads. Could we have used AND gate or OR gate? Why or why not?</p>
+<p>No.<br>For AND:If C=0,K=0, then M=1 or M=0, so we can’t decrypt cipher text.<br>Similarly:If C=1,K=1,then M=1 or M=0,so  we can’t decrypt cipher text.</p>
+<p>Instead, use the XOR gate, can be uniquely determined.<br>encrypt：C=M⊕K<br>decrypt：M=C⊕K</p>
+<p>What’s more, for AND:If  C=1,then the K=1 and M=1.we can get unique M and K.Similarly for OR gate, If C=0 then the K=0 and  M=0.</p>
+<p>So  can’t use AND gate and OR gate for one-time pads.</p>
+<p><strong>TA’s answer:</strong>AND and OR do not lead to secure one-time pad. If we are using AND, then if we see a 1 in the ciphertext, we know that bit of the key must be 1 and that bit of the message must be 1. Similarly for OR, if we see a 0 in the ciphertext, we know that that bit of the key as well as the message must be 0. So security doesn’t hold. In fact, it may not even be possible to decrypt the message properly even if you have the correct key. This is because for example, if we are using AND and the key is 0, the ciphertext will always be 0 and regardless of what the message is. In this case, you can’t recover the message from the ciphertext.<br>Does it really matter if we used AND, OR or XOR with the one-time pad? The answer is yes, and it’s extremely important to understand why.  AND has a 75% chance of outputting 0 and a 25% chance of outputting a 1. While OR has a 25% chance of outputting 0 and 75% chance of outputting 1. While the XOR operation has a 50% chance of outputting 0 or 1.<br><a href="https://www.khanacademy.org/computing/computer-science/cryptography/ciphers/a/xor-and-the-one-time-pad" target="_blank" rel="noopener">https://www.khanacademy.org/computing/computer-science/cryptography/ciphers/a/xor-and-the-one-time-pad</a></p>
+<p>4) Alice proposes a one-way function f(x) = 2x^2 + 5x + 3. Is this a secure one-way function?<br>   Hint: read about solving quadratic equation</p>
+<p>It is not a secure one-way function.</p>
+<p>Every x∈（－∞，－５/４）∪（－５/４，＋∞）,there exists a x’ , where x’=x  and  f(x’)=f(x) .</p>
+<p>What’s more , there is  Vieta formula to solve quadratic equation, so it is easy to find x.</p>
+<p>To sum up ,it is not a secure one-way function.</p>
+<p><strong>TA’s answer:</strong>This is not secure because given 2x^2 + 5x + 3, it is easy to compute x. Please read about solving quadratic equations. There is a simple formula to solve for x.</p>
+<p>5) Recall that even if the server only stores f(p), client has to send p in clear to authenticate to the server. If the adversary is watching, it learns p. Normally you have to use HTTPS to solve this problem. Alice has another idea. Instead of client sending p, client will instead only send f(p) to the server to authenticate. Then the adversary never learns p even if it can watch the whole communication. Is this a good idea? Does it improve the security of the system?</p>
+<p>No, Adversary can bypass encryption process and send the f(p) to the server for authentication.In some extend, it is equal to no encryption.</p>
+<p><strong>TA’s answer:</strong>This is not a good idea.If the client only needs to send f(p) to the server to authenticate rather than using p, anyone with the knowledge of f(p) is able to communicate with the server and he no longer needs the information of p. However, an adversary can learn f(p) in this situation. </p>
+<p>6) Consider the one-time digital signature scheme discussed in the lecture. Suppose the adversary can get signatures on any two messages of his choice. Show how the adversary can produce a signature on a third message (different from the first two).</p>
+<p>Make the message length in the first two times is same as the message length in the  third time.</p>
+<p>First time , sent message 0^n(e.g 0000) and then get signature X0(vector with length n).Second time ,sent message 1^n(e.g 1111) and then get  signature X1(vector with length n).Then we can get corresponding signature for 0 and 1 for every bits.So we can produce a signature on a third message.</p>
+<p>if m[i]=0, σ[i]=x0[i]   and   if m[i]=1, σ[i]=x1[i]    (1&lt;=i&lt;=n)</p>
+<p>For example , a third message is 1011, then the signature is (X1[1],X0[2],X1[3],X1[4])</p>
+<p><strong>TA’s answer:</strong>Here is the one-time digital signature scheme.<br>If the adversary can get signatures on any two messages, he or she can then choose one message that contains only 0s and another message containing only 1s. In that case, the adversary will know the signature corresponds to the message in which every bit is 0, and the signature corresponds to the message in which every bit is 1, so that he’ll be able to sort out the entire correspondence, and generate the signature on a third message with contents that can be freely selected, making the system totally insecure.</p>
+<h2 id="HW3"><a href="#HW3" class="headerlink" title="HW3"></a>HW3</h2><p><strong>Block chain</strong></p>
+<p> Q1: Consider the hash function H used for Bitcoin mining. Suppose this function has the property that its possible to find collisions. In other words, for any string s1, its possible to find another string s2 (even with certain patterns) such that H(s1) = H(s2) in about 10 hours. Show that this will lead to problems in Bitcoin security.</p>
+<p>Answer1：Because i-th block has the hash value of (i-1)-th block, then one hash value two corresponding values, so there will be two answers when we find the (i-1)-th block.</p>
+<p>In the bitcoin transaction,  we can change the transaction information , but the verification passed.</p>
+<p><strong>TA‘ answer：</strong>Bitcoin security will break down in this case. This is because if the adversary can find another Block which has the same hash, then adversary can change that block and put the new one instead of that in the Blockchain. This attack cannot be detected because the hash will remain the same. </p>
+<p>Q2: Suppose an adversary has found an algorithm to forge digital signatures used in Bitcoin.<br> That is, adversary can sign arbitrary message without having your signing key.</p>
+<p>1）Assume you are constantly monitoring the blockchain. Can the adversary steal your Bitcoins without you being able to detect?</p>
+<p>Adversary can’t do it.Because the transaction information are broadcasted to public, so you can detect when your Bitcoins are stolen.</p>
+<p>2）Come up with a strategy for the adversary to steal your Bitcoins so that there is no way for you to get them back (assuming you cannot forge signatures).</p>
+<p>Adversary sign a bitcoin exchange message, which send bitcoin to designated account such as the adversary‘s account. This process is irreversible and cannot forge signatures.</p>
+<p><strong>TA‘ answer：</strong> A: 1) No, the adversary has to broadcast the transaction which steals your Bitcoins. This transaction must appear on the Blockchain. So you will be able to detect it. However even if you detect it, its not clear how to stop it. 2) Adversary can simply transfer all you coins to another public key which he owns. Then there is no way for you to get them back.</p>
+<p>Q3: Bob has an idea to make Bitcoin more green and environmental friendly. Rather than wasting computational resources and electricity on solving a meaningless hash puzzle, why not solve a puzzle which is good for the society? Bob proposes that miners compete to solve hard problems in DNA sequencing. The person who mines the current block will also pick a DNA sequencing problem the next miner must solve in order to mine the next block. Is this secure?<br>Note: you don’t need to understand what DNA sequencing is. Just think of them as some large computation scientists need to perform to understand human genes better.</p>
+<p>It is not security.</p>
+<p>（1）The person who mines the current block will also pick a DNA sequencing problem the next miner must solve,  so the person maybe choose the DNA sequencing problem he has known the answer, then there is little probility for others to mine the block successfully. </p>
+<p>（2）If use DNA sequencing, there will be some people who steal other‘s answer to get reward.Instead, when we solve the hard problem, we should slove the H(Bi-1||ti||pk||r)=000( k times)……There has pk to identify the miner, so it is hard to steal answer. </p>
+<p>A：This is completely insecure. This is because the person who mines the current block can just pick a puzzle whose solution he already knows. Then the same person will be able to mine the next block as well. This process can continue and a single miner can take over the entire system. </p>
+<p>Q4: Suppose that there are two forks in Bitcoin. Is it possible that both of them will be equally long and will continue to be equally long? Please explain your answer.</p>
+<p>I think it is not possible. </p>
+<p>The probability of finding the answer at the same time is little, so continuing to be equally long is scarcely possible.</p>
+<p>A: No. Mining of blocks is a randomized process. Hence, sooner or later, one fork will become longer than the other. As soon as that happens, all (honest) miners will switch to that fork and the other fork will be left further and further behind. </p>
+<p>Q5 (Selfish Mining Attacks): Alice is successful in mining the i-th Bitcoin block. Rather than broadcasting the block (and the puzzle solution) to everyone over the network, she decides to keep it to herself and continue mining further blocks on it. Indeed, if she broadcasts the i-th block and the puzzle solution to everyone, this is only going to increase competition for mining the (i+1)-th block. Since she is ahead of everybody at this point, her idea is to continue mining on it, get a couple more blocks, and then broadcast all these blocks at the same time to lock-in rewards for a few blocks (rather than a single block). Suppose Alice control only 10 percent of the computing power. Is this the right strategy for her? Why or why not?</p>
+<p>It is not the right strategy for her.</p>
+<p>Because she only control 10 percent of the computing power, so there is great possiblity that other people mining the i-th Bitcoin block while Alice is mining the (i+1)-th block. </p>
+<p>A: No, by doing that, Alice risks losing reward even for the current block. Since other miners have a lot more computing power than Alice, it is very likely that they can mine both block i and block i+1 before Alice can mine Block i+1. If that happens, Alice loses the reward even for Block i.</p>
+<p>6) Suppose someone gives you an algorithm to solve the CDH problem: it takes as input g, g^a, g^b and output g^ab. Show how you can use this to break Elgamal encryption.</p>
+<p>Firstly, get the g^a,g,g^b and C(CipherText).</p>
+<p>Secondly, get the g^ab by the algorithm, the g^ab is the key. K=g^(ab)</p>
+<p>Thirdly,use extended euclidean algorithm to solve K, M=C*k^(-1)</p>
+<p>A:Adversary knows g^a since that is the public key. g^b is part of the ciphertext. Using the given algorithm, adversary can compute g^ab. Now given M.g^ab, adversary can easily compute M by computing the inverse of g^ab and multiplying with M.g^ab.</p>
+<p>7) Consider auctions done using ElGamal Encryption. Alice is selling a Phone and has public key PK. Bob would like to Bid 100 dollars. He encrypts his bid under public key PK and sends it to Alice. Trudy is watching over the channel and sees the ciphertext. He doesn’t know Bob’s bid. But he would like to bid exactly double of Bob and win the auction in style. Show that this is possible in ElGamal encryption.</p>
+<p>Trudy sends his ciphertext twice as much as the Bob’s.</p>
+<p>For example, Bob:C=M<em>K and Trudy: C’=2</em>M*K</p>
+<p>A: Here Trudy can indeed win. ElGamal ciphertext is g^b, M.g^ab. Using this, Trudy cannot recover M. But Trudy can multiply M.g^ab by 2. Trudy can then send g^b, 2.M.g^ab to Alice. When Alice decrypt this, Alice will get 2M.</p>
+<h2 id="HW4"><a href="#HW4" class="headerlink" title="HW4"></a>HW4</h2><p><strong>RSA</strong></p>
+<p>Q1: Consider auctions done using textbook RSA Encryption. Alice is selling a Phone and has public key PK. Bob would like to Bid 100 dollars. He encrypts his bid under public key PK and sends it to Alice. Trudy is watching over the channel and sees the ciphertext. He doesn’t know Bob’s bid. But he would like to bid exactly double of Bob and win the auction in style. Show that this is possible in RSA encryption.<br>Note: textbook RSA means without using hash</p>
+<p>Bob:C=M^E mod N</p>
+<p>so Trudy: C’=M^E * (2^E) mod N = (2*M)^E mod N</p>
+<p>Because we know the public key E, so we can  multiply C by 2^E.</p>
+<p>—–这叫做密文的可构造性（malleable）</p>
+<p>A: RSA ciphertext is C = M^e mod N. Using this, Trudy cannot recover M without the knowledge of d. But Trudy can compute C‘ = 2^e mod N. Then Trudy computes C.C’ = (M^e).(2^e) mod N = (2M)^e mod N. Now Trudy can send (2M)^e mod N to Alice. When Alice decrypts this, she will get 2M.</p>
+<p>Q2: We saw that textbook RSA signatures are not secure because you can multiply two different signatures to obtain new signatures on new messages. However is textbook RSA at least a one-time signature scheme? That is, suppose that the adversary only gets a signature on a SINGLE message m. Can the adversary produce a signature on a different message m’ not equal to m? </p>
+<p>Yes. For example, c=m^E mod N c’=(m* m)^E mod N . Therefore, we can signature on a different message m’=m * m not equal to m.</p>
+<p>A：No, textbook RSA is not even one-time secure. Given a signature s = M^d mod N on message M, adversary can just compute s. s = (M^e). (M^e) mod N which will be (M^2)^e mod N. This is a valid signature on message M^2. </p>
+<p>Q3: Consider the following variant of the ElGamal commitment scheme we saw in the class. The committer chooses a,b and sends g, m.g^ab to the receiver (where m is the message to be committed). In the opening phase, the committer sends a, b to the receiver. The receiver computes g^ab and then recovers the message. Is this commitment scheme binding? Is this hiding? Please give brief 2-3 line arguments.</p>
+<p>This commitment is hiding  not binding.</p>
+<p>(1) Given g and m*g^(ab) is less than original parameters, so it is hiding.</p>
+<p>(2) If the committer is dishonest: For example, if C=M * g^(3<em>2)，but committer can send a=4，b=5 to receiver. so the C=M’ * g^(4</em>5). And M’ is not equal to M. Therefore, the commitment is not binding.</p>
+<p>A：Hiding: This is because the committer can send any a, b during the opening phase. Different values of a, b will lead to different values of g^ab. This is turn will lead to different values of the message M. Not Binding: This is because compared to the Elgamal commitment scheme, the receiver gets even less information in the commitment phase. </p>
+<p>Q4: Consider the following protocol for 2-party coin flipping. First, Alice commit to her bit b0. Then Bob commits to his bit b1. Then Alice opens b0 following which Bob opens b1. The output is the XOR of these two bits. Is this secure?</p>
+<p>This is not secure. </p>
+<p>Bob can copy Alice’s commitment, then the b1=b0, so b=b0 XOR b1=b0 XOR b0.This is a decisive result. So it is not secure.</p>
+<p>A: This is not secure. Bob can just replay the same commitment which he received from Alice. Then b1 = b0 and XOR is always 0. Hence, Bob can make sure that the outcome of coin flipping is always 0.</p>
+<h2 id="HW5"><a href="#HW5" class="headerlink" title="HW5"></a>HW5</h2><p><strong>ZK proof</strong></p>
+<p>Q1: Consider the ZK proof for graph 3-coloring. What if the prover doesn’t permute the colors in every iteration? That is, the prover permutes the colors once in the beginning and then sticks to that permutation for all iterations. Will the protocol still be zero-knowledge?</p>
+<p>No, it cannot satisfy the zero-knowledge property.</p>
+<p>If not permutes the colors, Verifier will know the knowledge after several steps.  It is not satisfy the zero-knowledge property.</p>
+<p>Q2: Consider the MPC protocol which we just saw. Suppose that the first and third student are colluding. Show that they can compute the age of the second student.</p>
+<p>Say the first student and the third student know P1 and P3 separately, the age of third student is A3.</p>
+<p>So the age of the second student is A2=P3-P1-A3.</p>
+<h2 id="Quiz"><a href="#Quiz" class="headerlink" title="Quiz"></a>Quiz</h2><p>1) Alice and Bob have an idea to make one-time pad even more secure. They generate two keys for one-time pad and use double encryption. That is, they encrypt the message using the first key, then encrypt the result using the 2nd key. Is this more secure than using just a single key? Explain your answer.</p>
+<p>No.it is same as the secure of a single key.</p>
+<p>C=M XOR K1 XOR K2 = M XOR K   (If the K=K1 XOR K2)</p>
+<p>C’=M XOR K3</p>
+<p>There is no big difference between two encryption method. We can just use K directly to encryption M, so it is not more secure than using just a single key.</p>
+<p>2) In bitcoin, typically takes 10 minutes to 1 hour to confirm the transaction. Alice needs to pay Bob and has an idea to make the transactions instantaneous. Instead of sending the transactions to the miners, Alice directly sends the signed transaction to Bob. Bob checks the signature from Alice and checks if Alice has enough coins for this payment. If so, Bob gives the product to Alice. And then Bob broadcasts the transaction over the Bitcoin network. Miners can then take their own time and include this transaction in the public ledger. Is this safe for Bob?</p>
+<p>It is not secure for Bob.</p>
+<p>There may be double spending attack. For example, Alice trade with other people using same money.In the meanwhile, two miner mined successful and record two different transactions into the block separately. There are forking. When the blockchain which record Bob’s profit is shorter than the other, then the trasaction between Bob and Alice will be invalid.</p>
+<p>3) Design a multiplicatively homomorphic encryption scheme. This mean, given an encryption of a and encryption of b, you should be able to compute an encryption of a.b without having access to the decryption key.</p>
+<p>Hint: check all the encryption schemes which we covered in class and see if any of them have this property.</p>
+<p>RSA encryption.</p>
+<p>Enc(a)=a^E mod N</p>
+<p>Enc(b)=b^E mod N</p>
+<p>Enc(a * b)=(a*b)^E mod N=Enc(a) *Enc(b)</p>
 
       
 
@@ -185,7 +332,774 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/05/%E7%81%AB%E8%BD%A6%E6%A0%88%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/09/05/Summer%20project%20HW/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络安全概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/25/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/">网络安全概述</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/25/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/" class="archive-article-date">
+  	<time datetime="2021-08-24T16:31:13.464Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="网络安全概述"><a href="#网络安全概述" class="headerlink" title="网络安全概述"></a>网络安全概述</h1><h2 id="计算机网络基础知识"><a href="#计算机网络基础知识" class="headerlink" title="计算机网络基础知识"></a>计算机网络基础知识</h2><p>Computer network=computer（CPU+MEM+peripherals）</p>
+<h3 id="Application-layer"><a href="#Application-layer" class="headerlink" title="Application layer"></a>Application layer</h3><p>WHY DNS？</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210825171818316.png" alt="image-20210825171818316"></p>
+<h3 id="transport-layer"><a href="#transport-layer" class="headerlink" title="transport layer"></a>transport layer</h3><p>services provided to upper layer(application layer?)</p>
+<p>two types of transport service</p>
+<ul>
+<li><p>UDP</p>
+</li>
+<li><p>TCP</p>
+</li>
+</ul>
+<p>Actually, it is similar to netwok service，but we also need transport layer.</p>
+<p>The reason is:</p>
+<ul>
+<li>transport layer has a set of primitives.</li>
+<li>transport layer realized the logic channel of application processes，and network layer realized only the logic channel of hosts</li>
+</ul>
+<p>so network layer is the basis of transport layer.</p>
+<ul>
+<li>transport layer is more reliable.</li>
+</ul>
+<h5 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h5><p>UDP transmits segments consisting of an 8-byte header followed by the payload.    （yes）</p>
+<p>applications：SNMP、DNS</p>
+<p>checksum：</p>
+<p>should add 12-byte pseudo header.</p>
+<h5 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h5><p><img src="https://i.loli.net/2021/08/26/UFp2BWJvj7SX4qG.png" alt="image-20210826154201614"></p>
+<p><strong>comparison：</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>header</td>
+<td>20-byte</td>
+<td>8-byte</td>
+</tr>
+<tr>
+<td></td>
+<td>connection-oriented</td>
+<td>connectionless</td>
+</tr>
+<tr>
+<td></td>
+<td>reliable</td>
+<td>unreliable</td>
+</tr>
+<tr>
+<td></td>
+<td>point to point full-duplex</td>
+<td>point to point</td>
+</tr>
+<tr>
+<td></td>
+<td>byte stream</td>
+<td>message stream</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h5 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h5><p>TCP service is obtained by having both the sender and receiver create end points<strong>, called sockets.</strong></p>
+<p>Each socket has a number (address) consisting of the IP address of the host and a 16-bit number local to that host, called port.</p>
+<p>For example:</p>
+<p>Socket=（IP address：port number）</p>
+<p>if IP address is 210.37.145.1，and the port number is 23，then the socket is  (210.37.145.1:23).</p>
+<p>Port numbers below 1024 are called <strong>well-known ports</strong> and are reserved for standard services.</p>
+<p>well-known port:0-1023</p>
+<p>registered port:1024-49151</p>
+<p>dynamic port or private port:49152－65535</p>
+<p><strong>Question：</strong></p>
+<p>Host A sends a TCP segment (Seq = 43, ACK = 103), to which host B replies with a TCP segment (Seq = 103, ACK = 57). The payload of the first TCP segment is                    (  D )</p>
+<p>A 57 bytes long</p>
+<p>B 46 bytes long</p>
+<p>C 43 bytes long</p>
+<p>D 14 bytes long</p>
+<h3 id="network-layer"><a href="#network-layer" class="headerlink" title="network layer"></a>network layer</h3><h4 id="routing-algorithm"><a href="#routing-algorithm" class="headerlink" title="routing algorithm"></a>routing algorithm</h4><h5 id="shortes-path-routing"><a href="#shortes-path-routing" class="headerlink" title="shortes path routing."></a>shortes path routing.</h5><p>Dijkstra algo</p>
+<p>Flooding:</p>
+<p>Flooding is a simple routing algorithm, which delivers the received packets to all possible connection paths until the packets arrive.</p>
+<p>Problem:</p>
+<p>dest can receive duplicate packets</p>
+<h5 id="Distance-Vector-Routing"><a href="#Distance-Vector-Routing" class="headerlink" title="Distance Vector Routing"></a>Distance Vector Routing</h5><p>DV</p>
+<h4 id="IP-address"><a href="#IP-address" class="headerlink" title="IP address"></a>IP address</h4><p>IP早期编码方案：</p>
+<p>划分成：  </p>
+<p>A:0-127 </p>
+<p>B:128-191 </p>
+<p>C:192-223 </p>
+<p>D:224-239</p>
+<p>subnet</p>
+<p>subnet mask</p>
+<h3 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h3><p>计算机网络从两个层面来讲吧，一个是硬件的infrastructure,一个就是从软件来讲的protocol。而infrastructure更像是通信工程专业所重点研究的，软件方向的protocol就是计算机和信息安全专业所研究的。</p>
+<p>protocol展现的是一种设计方法吧，像区块链的那种共识机制啊、bitcoin和其他一些币的运行模式啊等等。</p>
+<p>protocol定义的是网络信息中的一个形式。</p>
+<p>我们常用的四层中常用的有很多的protocol，也许应该将这些protocols做一个比较，他们有很多相近之处。</p>
+<p>SSL和HTTPS的关系：HTTPS=HTTP+SSL</p>
+<p>email安全中常用的是PGP(一种标准)</p>
+<p>它的整体思路就是先签名后加密，是一种比较安全的？？</p>
+<p><strong>网络标准：</strong></p>
+<ul>
+<li>RFC:Request for comments</li>
+<li>IETF:Internet Engineering Task Force</li>
+</ul>
+<h2 id="编码解码学"><a href="#编码解码学" class="headerlink" title="编码解码学"></a>编码解码学</h2><ul>
+<li><p>传统密码学</p>
+</li>
+<li><p>现代密码学</p>
+<ul>
+<li><p>对称密码（共享密钥</p>
+<ul>
+<li>stream cipher<ul>
+<li>RC4</li>
+</ul>
+</li>
+<li>block cipher<ul>
+<li>DES</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>非对称密码（公钥密码</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>流密码类似一次一密？one time pad</p>
+<p>​       通过keygenerator生成keystream（他的长度应该和明文一样长)</p>
+<p>DES</p>
+<p>CBC:cipher block chaining</p>
+<p>DH交换协议———开端</p>
+<p>ElGamal———DH拓展</p>
+<p>RSA———–巅峰</p>
+<p>ECC</p>
+<h2 id="网络安全协议"><a href="#网络安全协议" class="headerlink" title="网络安全协议"></a>网络安全协议</h2><h4 id="电子邮件安全"><a href="#电子邮件安全" class="headerlink" title="电子邮件安全"></a>电子邮件安全</h4><p>应用层的SMTP本身不具备任何安全措施。</p>
+<p>安全的电子邮件标准——–PGP</p>
+<p>PGP的过程就类似于先签名后解密。</p>
+<p>一般来说这种是不安全的，不安全在于重放攻击replay attack，这里是单项的。</p>
+<h4 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h4><p>提供的服务：</p>
+<ul>
+<li>confidentiality</li>
+<li>integrity</li>
+<li>Authentication</li>
+</ul>
+<p>要注意的是，客户端发送的信息之中不包括服务器的域名。也就是说，理论上服务器只能包含一个网站，否则会分不清应该向客户端提供哪一个网站的数字证书。这就是为什么通常一台服务器只能有一张数字证书的原因。</p>
+<p>如果服务器需要确认客户端的身份，就会再包含一项请求，要求客户端提供”客户端证书”。比如，金融机构往往只允许认证客户连入自己的网络，就会向正式客户提供USB密钥，里面就包含了一张客户端证书。</p>
+<p>增强SSL安全的方法：</p>
+<ul>
+<li>pre_master_key保密性增强<ul>
+<li>口令加密</li>
+<li>硬件加密</li>
+</ul>
+</li>
+<li>提高随机数的质量</li>
+<li>提高证书CA的可靠性</li>
+</ul>
+<p>其他：</p>
+<p>HTTPS与SSL关系：</p>
+<p>HTTPS：HTTP over TLS。TLS的前身是SSL，TLS 1.0通常被标示为SSL 3.1，TLS 1.1为SSL 3.2，TLS 1.2为SSL 3.3。</p>
+<p>其中，数据完整性和隐私性由TLS Record Protocol保证，身份认证由TLS Handshaking Protocols实现</p>
+<p>如何防御中间人攻击：</p>
+<p>HTTPS提供一种思路：找一个十分权威的第三方CA（Certificate  Authority），去那里申请证书的一方可以获得权威认证。</p>
+<p>端口号：</p>
+<p>HTTP:80</p>
+<p>HTTPS:443</p>
+<p>压缩算法：</p>
+<p>基于口令的认证：</p>
+<p>“表单签名”？是一种吗？</p>
+<h4 id="IPsec："><a href="#IPsec：" class="headerlink" title="IPsec："></a>IPsec：</h4><p>网络层：路由器之间的连接。</p>
+<p>提供的服务：</p>
+<ul>
+<li>data integrity</li>
+<li>origin authentication</li>
+<li>replay attack prevention</li>
+<li>message confidentiallity</li>
+</ul>
+<p>有两种协议供选择（为啥又是协议protocol）？</p>
+<p>哦，明白了，IPSec是协议簇，不是一个协议，AH和ESP是其中两个协议。</p>
+<ul>
+<li>AH</li>
+<li><strong>ESP:更严谨</strong></li>
+</ul>
+<p>ESP通常使用<strong>DES、3DES、AES</strong>等加密算法(公钥加密)实现数据加密，使用MD5或SHA1来实现数据完整性认证。</p>
+<p>两种传输模式：</p>
+<ul>
+<li>transfer mode</li>
+<li><strong>tunneling mode</strong> </li>
+</ul>
+<p>两两组合，构成4种组合，最常用的是<strong>Tunneling mode with ESP</strong>。</p>
+<p><strong>SA安全联盟</strong></p>
+<ul>
+<li>单向的</li>
+<li>作用？？</li>
+</ul>
+<p>IPSec中安全关联(Security Associations)三元组是&lt;SPI，源/目的IP地址，IPSec&gt;</p>
+<ul>
+<li>SPI：安全参数索引security parameters index</li>
+<li>源/目的IP地址</li>
+<li>IPSec协议：AH/ESP</li>
+</ul>
+<p>一个典型的应用：VPN</p>
+<h2 id="无线网络安全"><a href="#无线网络安全" class="headerlink" title="无线网络安全"></a>无线网络安全</h2><p>WiFI是越来越重要：理由是越来越多人使用。</p>
+<p>比较失败的一个协议是802.11b WEP（wired Equivalent Privacy）</p>
+<p>WEP的设计思路：倒是利用了OTP</p>
+<h2 id="防火墙以及攻防系统"><a href="#防火墙以及攻防系统" class="headerlink" title="防火墙以及攻防系统"></a>防火墙以及攻防系统</h2><p>比较应用化：</p>
+<h3 id="三种防火墙"><a href="#三种防火墙" class="headerlink" title="三种防火墙"></a>三种防火墙</h3><ul>
+<li>有状态记录的数据包过滤</li>
+<li>无状态记录的数据包过滤</li>
+<li>基于应用的网关设置</li>
+</ul>
+<p><strong>无状态记录的数据包过滤</strong></p>
+<p>IP Spoofing：防火墙对IP地址进行筛选。</p>
+<p>内网通过router防火墙连接外网，筛选</p>
+<ul>
+<li>发出方和接收方的IP地址。</li>
+<li>TCP/UDP发出方和接收方的端口(port number)???</li>
+<li>ICMP信息类别(message type)？？？？</li>
+<li>TCP SYN和ACK比特位的位置？？</li>
+</ul>
+<p>例子example：</p>
+<p>这些例子完全不懂，是不是呀计算机网络基础知识？？？？</p>
+<p>block incoming and outgoing datagrams with IP protocol field=17 and with either source or dest port =23</p>
+<ul>
+<li>对于进出子网的UDP flows和telnet链接都被截断</li>
+</ul>
+<p>block inbound TCO segment with ACK=0</p>
+<ul>
+<li>不允许子网外用户向子网内用户申请创建TCP链接，但是允许子网内向子网外用户创建TCP链接</li>
+</ul>
+<p>ACL：一个权限控制条件表，以（action，condition)的格式对进入内网数据包做筛选</p>
+<p><img src="https://i.loli.net/2021/08/25/GYtT34bo1lCnsUy.png" alt="image-20210825144146892"></p>
+<p><strong>有状态记录的数据包过滤</strong></p>
+<p>对每一个TCP连接都跟踪其状态信息</p>
+<ul>
+<li>实时检测建立SYN，断开FIN信息，从而判断进入和离开内网的网报是否合理</li>
+<li>对很久呆滞的链接进行切断处理</li>
+</ul>
+<p>过滤筛选：</p>
+<p>子网的IP地址（source)是不可伪造的，如果有人伪造IP地址，很容易被发现，而这种伪造行为就叫IP地址<strong>。</strong></p>
+<p><strong>应用网关</strong></p>
+<p>不光根据IP/TCP/UDP信息，而且根据因国内高才能信息进行网报筛选。</p>
+<p>e.g 允许有选择的一些内部用户通过telnet链接外网。</p>
+<ul>
+<li>要求所有用户通过网关建立telnet链接</li>
+<li>对有权限的用户，网关为其向目标中断建立telnet连接</li>
+<li>router连接所有非网关连接的链接</li>
+</ul>
+<p>防火墙</p>
+<p>筛选不就是一个分类的过程？？？（而且是二分类？</p>
+<p>网关</p>
+<p>IP spoofing（IP 欺骗）:</p>
+<p>e.g假冒自己是另一个子网中的IP</p>
+<p>SYN：同步序列编号（Synchronize Sequence Numbers）TCP网络连接时，客户机首先发出一个SYN消息，服务器使用SYN+ACK应答表示接收到了这个消息，最后客户机再以ACK消息响应</p>
+<h3 id="IDS"><a href="#IDS" class="headerlink" title="IDS"></a>IDS</h3><p>intrusion detection system入侵检测系统。</p>
+<p>对网络包进行过滤：</p>
+<ul>
+<li>只对TCP/IP协议数据“头区间”进行分析</li>
+<li>对连接与连接之间的相关性不做检查</li>
+</ul>
+<p><strong>更深入的数据包检查：</strong></p>
+<p>同时检测协议包的data contents内容(e.g 对一个数据包的字符串做比较检查，检查其与已知病毒数据库中电脑病毒的相似性)</p>
+<p><strong>检查属于不同网络连接的数据包的相关性：</strong></p>
+<ul>
+<li>port scanning</li>
+<li>Dos attack</li>
+</ul>
+<p>e.g多个网络想一个web service 发送SYN message的话可能就是一个SYN flooding attack</p>
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><p>主要包括 Virus、Worm、Trojan Horse、Backdoor、Logic Bomb</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/25/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-安卓开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/09/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">安卓开发</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/09/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2021-05-09T07:20:05.493Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="安卓开发"><a href="#安卓开发" class="headerlink" title="安卓开发"></a>安卓开发</h1><h2 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h2><h4 id="Activity的四大组件"><a href="#Activity的四大组件" class="headerlink" title="Activity的四大组件"></a>Activity的四大组件</h4><p>Activity:</p>
+<p>展示型组件，用于向用户展示一个界面，并且可以接受用户的输入信息从而进行交互</p>
+<p>Service:</p>
+<p>后台服务型组件</p>
+<p>BroadcastReceiver:</p>
+<p>创建完成之后的安卓开发流程：</p>
+<p>安卓中的工程中的一个module对应一个app</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210509164236751.png" alt="image-20210509164236751"></p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210509160606151.png" alt="image-20210509160606151"></p>
+<p>所有的视图祖先类View</p>
+<p>类似于前端嘛。</p>
+<p>记录一些常见的吧：</p>
+<p>基础主界面：</p>
+<p>单选按钮RadioButton。</p>
+<p>常见属性：</p>
+<ul>
+<li>checked：</li>
+</ul>
+<p>自定义shape</p>
+<p>res/drawable文件夹下面的。</p>
+<p>选择器：动态改变。</p>
+<p>CheckBox</p>
+<p>1.selector 自定义颜色选择器：</p>
+<p>选中图标颜色开始改变。</p>
+<p>2.很多重复代码可以复用，自定义style属性。</p>
+<p>3.监听器</p>
+<ol>
+<li>自定义图形shape比传统png图片更节省内存</li>
+<li>约束布局是Android主推的布局，也是最早出现的布局</li>
+<li>Button 按钮，继承自TextView</li>
+</ol>
+<p>文本控件TextView</p>
+<p>涉及到rgb</p>
+<p>Android :textColor=“#000”</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/09/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/06/Linux/">Linux</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/06/Linux/" class="archive-article-date">
+  	<time datetime="2020-10-05T18:03:14.747Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="su和sudo"><a href="#su和sudo" class="headerlink" title="su和sudo"></a>su和sudo</h3><p>Sudo【superuser do 超级使用者】</p>
+<p>关于su和sudo:</p>
+<p><code>su</code> 命令可以在一个登陆 session 下切换不同用户(通常是root).意思就是不需要退出当前用户的登录而切换到新用户。</p>
+<p>​                        <code>su username</code> </p>
+<p>username 为空默认切换到root用户. 输入要登录用户密码即可。</p>
+<p>另一种切换root用户的方法就是 <code>su –</code></p>
+<p><code>-</code> 必须作为 <code>su</code> 的最后一个参数. 而 <code>-l</code> <code>-login</code> 没有该限制。</p>
+<p>su 和 su - 进入的目录是不一样的</p>
+<p>su 会保持前者的用户环境, 而 su - 会新建一个目的用户的环境</p>
+<p>su 会保持当前用户的环境, 因为在某些情况下, 使用当前用户比管理员账户能更好的解决问题. 比如重现或者debug问题时,在当前用户环境下更高效</p>
+<p>当然 su 在很多情况下是不建议使用的, 或者说是相当危险的. 因为 root 用户要在当前用户的环境下操作, 而不是自己的环境. 因为这会给非 root 用户 更改系统文件或数据的权限</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211226141508515.png" alt="image-20211226141508515"></p>
+<p>Sudo和su区别：</p>
+<p>最大的不同就是所需要的密码不同: sudo 需要的是当前用户的密码,而 su 命令需要的是 管理员的密码.</p>
+<p>Sudo只是一个临时获取的root权限</p>
+<p>sudo 命令比 su 命令更安全. su 命令需要其他用户也知道 root 密码, 而 sudo 只需要配置 sudoers file 即可, 而且可以随时删除特定用户的权限.</p>
+<p>hhy@LAPTOP-3ITN966I:~$ su</p>
+<p>Password:</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# su -  # 转到~目录，下面什么也没有</p>
+<p>root@LAPTOP-3ITN966I:~# ls -l /etc/sudoers</p>
+<p>-r–r—– 1 root root 755 Jan 18 2018 /etc/sudoers</p>
+<p>root@LAPTOP-3ITN966I:~# ls  </p>
+<p>root@LAPTOP-3ITN966I:~#</p>
+<p><strong>ifconfig**</strong>一般需要<strong><strong>root</strong></strong>权限**</p>
+<p>hhy@LAPTOP-3ITN966I:~$ ifconfig eth0 up</p>
+<p>SIOCSIFFLAGS: Operation not permitted</p>
+<p>` <code>ssh</code>登陆<code>linux</code>服务器操作``？```</p>
+<p>XX先不了解。像是配置git。</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# cat /etc/sudoers</p>
+<p>#</p>
+<p># This file MUST be edited with the ‘visudo’ command as root.</p>
+<p>#</p>
+<p># Please consider adding local content in /etc/sudoers.d/ instead of</p>
+<p># directly modifying this file.</p>
+<p>#</p>
+<p># See the man page for details on how to write a sudoers file.</p>
+<p>#</p>
+<p>Defaults  env_reset</p>
+<p>Defaults  mail_badpass</p>
+<p>Defaults  secure_path=”/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin”</p>
+<p># Host alias specification</p>
+<p># User alias specification</p>
+<p># Cmnd alias specification</p>
+<p># User privilege specification</p>
+<p>root  ALL=(ALL:ALL) ALL</p>
+<p><strong>用户账号</strong>   <strong>登陆者来源主机名</strong> <strong>=**</strong>（能够切换的身份）**     <strong>可运行的命令</strong></p>
+<p># Members of the admin group may gain root privileges</p>
+<p>%admin ALL=(ALL) ALL</p>
+<p># Allow members of group sudo to execute any command</p>
+<p>%sudo  ALL=(ALL:ALL) ALL</p>
+<p># See sudoers(5) for more information on “#include” directives:</p>
+<p>#includedir /etc/sudoers.d</p>
+<p>如何在sudoers文件中添加</p>
+<p>在 <code>sudoers file</code> 里面添加该用户？</p>
+<p>用root权限 可以改变文件权限，然后添加进去后再修改回权限。</p>
+<p>在root ALL=(ALL:ALL) ALL 下面添加一行,yourName 就是你的用户名:</p>
+<p>yourName  ALL=(ALL)AL</p>
+<p>创建用户：</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211214000803250.png" alt="image-20211214000803250"></p>
+<h3 id="make"><a href="#make" class="headerlink" title="make"></a>make</h3><p><a href="https://www.cnblogs.com/hazir/p/linux_make_examples.html" target="_blank" rel="noopener">https://www.cnblogs.com/hazir/p/linux_make_examples.html</a></p>
+<h3 id="关于Linux中的用户操作："><a href="#关于Linux中的用户操作：" class="headerlink" title="关于Linux中的用户操作："></a>关于Linux中的用户操作：</h3><p>（1）通过/etc/passwd 来查看用户相关信息：</p>
+<p>1、目前自己创建的用户：</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# cat /etc/passwd</p>
+<p>hhy : x:1000:1000:,,,:/home/hhy:<strong>/bin/bash</strong></p>
+<p><strong>snort</strong> : x:999:1001:SNORT_IDS:/home/snort:/sbin/nologin</p>
+<p><strong>B19070208:</strong> x :1001:1002::/home/B19070208:<strong>/bin/sh</strong></p>
+<p><strong>s01</strong>: x :1002:1003::/home/s01:<strong>/bin/sh</strong></p>
+<p><strong>s02</strong>: x :1003:1003::/home/s02:<strong>/bin/sh</strong></p>
+<p>举例解析：</p>
+<p><strong>snort: x :999:1001:SNORT_IDS:/home/snort:/sbin/nologin</strong></p>
+<p>用户名(<strong>snort</strong>)</p>
+<p>密码(x) 存储在/etc/shadow</p>
+<p>用户 ID（<strong>999</strong>）：代表用户的 ID 号，每个用户都要有一个唯一的 ID 。UID 号为 0 的是为 root 用户保留的，UID 号 1 到 99 是为系统用户保留的，UID 号 100-999 是为系统账户和群组保留的。</p>
+<p>群组 ID （<strong>1001</strong>）：代表群组的 ID 号，每个群组都要有一个唯一的 GID ，保存在 /etc/group文件中。</p>
+<p>用户信息（<strong>SNORT_IDS</strong>）：代表描述字段，可以用来描述用户的信息</p>
+<p>家目录（<strong>/home/snort</strong>）：代表用户的家目录。</p>
+<p>Shell（<strong>/sbin/nologin</strong>）：代表用户使用的 shell 类型。</p>
+<p>2、目前创造的组：</p>
+<p>如何查看所有的组啊？</p>
+<p>hhy: x :1000:</p>
+<p>snort: x :1001:</p>
+<p>B19070208: x :1002:</p>
+<p>student: x :1003:</p>
+<p>3、useradd和adduser的区别：</p>
+<p>useradd是一个<strong>Linux</strong>命令，但是它提供了很多参数在用户使用的时候根据自己的需要进行设置；而adduser是一个<strong>perl</strong> 脚本，在使用的时候会出现类似人机交互的界面，提供选项让用户填写和选择，这个命令比起useradd来说比较简单，也比较傻瓜。</p>
+<p>区别1：adduser比较人性化，不是Linux命令。</p>
+<p>​                               </p>
+<p>区别2：使用shell不同</p>
+<p>adduser命令有规范的，以下是不规范的命名格式：</p>
+<p>root@LAPTOP-3ITN966I:/home/hhy# adduser B</p>
+<p>adduser: Please enter a username matching the regular expression configured</p>
+<p>via the NAME_REGEX[_SYSTEM] configuration variable. Use the `–force-badname’</p>
+<p>option to relax this check or reconfigure NAME_REGEX.</p>
+<p>/bin/sh:</p>
+<p>/bin/bash:</p>
+<p>此外，adduser好像会在home下面帮你创建一个文件夹，不知道useradd会不会？？？</p>
+<p>目前推荐使用adduser 【perl脚本的】</p>
+<h3 id="清除Linux历史命令："><a href="#清除Linux历史命令：" class="headerlink" title="清除Linux历史命令："></a>清除Linux历史命令：</h3><p>history-w </p>
+<p>就是用内存中的历史命令覆盖 .bash_histroy 文件的内容，这样，即使 Shell 重新加载也加载不到任何命令了，因为此时 .bash_history 文件中已经空空如也了。</p>
+<h3 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hhy@LAPTOP-3ITN966I:~$ sudo su root</span><br><span class="line">[sudo] password for hhy:</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# passwd</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy#</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@LAPTOP-3ITN966I:/bin# cat /etc/passwd</span><br><span class="line">root:x:0:0:root:/root:/bin/bash  # 默认使用bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="gcc编译"><a href="#gcc编译" class="headerlink" title="gcc编译"></a>gcc编译</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ gcc -c  exp31.c</span><br><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ gcc -o exp31 exp31.o</span><br><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ ls</span><br><span class="line">exp31  exp31.c  exp31.o</span><br><span class="line">b19070208@LAPTOP-3ITN966I:~/linux$ ./exp31</span><br></pre></td></tr></table></figure>
+
+
+
+<p>为什么exp31可以直接执行？已经有x执行权限了。</p>
+<h3 id="删除非空文件"><a href="#删除非空文件" class="headerlink" title="删除非空文件"></a>删除非空文件</h3><p>删除一个不为空的文件夹就是 <code>rm -rf XXX</code></p>
+<p>其中-r recursion表示向下递归，不管多少级目录，一并删除。</p>
+<p>-f force表示直接强行删除，不做任何提示。</p>
+<p>注意：不是rmdir -rf XXX</p>
+<h2 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h2><p>关于变量问题：</p>
+<p>（1）目前好像是加单引号，双引号，以及不加，输出结果相同。shell中是不指定数据类型的，根据参与的运算决定。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]# a=hello</span><br><span class="line">[root@server ~]# echo $a</span><br><span class="line">hello</span><br><span class="line">[root@server ~]# b='hello'</span><br><span class="line">[root@server ~]# echo $b</span><br><span class="line">hello</span><br><span class="line">[root@server ~]# c="hello"</span><br><span class="line">[root@server ~]# echo $c</span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">换成数字：也是没有什么区别的</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# var1='1'</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# expr $var1 + 1</span><br><span class="line">2</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# var1="1"</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# expr $var1 + 1  </span><br><span class="line">2</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy# expr $var1+1</span><br><span class="line">1+1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>所以定义变量的时候，单双引号以及啥也不加会有什么区别呢？？？</p>
+<p>（2）变量的计算需要用expr命令，而且表达式运算符和数字必须有空格。</p>
+<p>关于运算符<br>运算符号    含义<br>+，-    加法，减法<br><em>，/，%    乘，除，取余<br>*</em>    幂运算<br>++，–    自增加，自减少<br>&lt;, &lt;=, &gt;, &gt;=    比较符号<br>=, +=, -=, *=, /=, %=    赋值运算<br>shell中常用的运算命令<br>运算操作与运算命令    含义<br>(( ))    用于整数运算<br>let    用于整数运算,与(())类似<br>expr    用于整数运算,功能相对较多<br>bc    linux下的计算器，适合小数及整数运算<br>$[ ]    用于整数运算</p>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><p>E45: ‘readonly’ option is set (add ! to override)</p>
+<p>不修改文件，直接退出 :q!</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><strong>rpm -qa | grep openssl</strong>  ＃[搜索指定rpm包是否安装]</p>
+<p><strong>rpm</strong>：RPM是以一种数据库记录的方式将所需要的软件安装到Linux主机的一套管理程序</p>
+<p>rpm -ivh 软件包名 #安装软件包并显示安装进度</p>
+<p>rpm -qa 查询已经安装那些软件包</p>
+<p>grep是“global search regular expression and print out the line”的简称，意思是全面搜索正则表达式，并将其打印出来。这个命令可以结合正则表达式使用，它也是linux使用最为广泛的命令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --justdb --nodeps &lt;yourpackage&gt;</span><br></pre></td></tr></table></figure>
+
+<p>rm -rf openssl-fips-2.0.16 强力删除openssl-fips-2.0.16</p>
+<table>
+<thead>
+<tr>
+<th>安装Linux桌面后终端无法打开</th>
+<th>将系统语言改成英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>hexdump是Linux下的一个二进制文件查看工具，可以将二进制文件转换为ASCII、10进制、16进制或8进制进行查看。</p>
+<p>常用选项：</p>
+<p>-b  将每个字节显示为8进制<br>-c  将每个字节显示为ASCII字符<br>-C  每个字节显示为16进制和相应的ASCII字符</p>
+<p>-d  每两个字节显示为10进制<br>-o  每两个字节显示为8进制<br>-x  每两个字节显示为16进制</p>
+<h2 id="网络知识"><a href="#网络知识" class="headerlink" title="网络知识"></a>网络知识</h2><p><strong>“ifconfig是用在LINUX或UNIX中的,IPCONFIG是用在WINDOWS中的,都是用来显示网卡信息的,只不过不同系统用不同的命令而已!!!”</strong></p>
+<p>192.168.2.0/24   </p>
+<p>192.168.2.0换成32位二进制，四组，每组8位</p>
+<p><strong>/24 表示前24位不变</strong></p>
+<h2 id="shell命令行"><a href="#shell命令行" class="headerlink" title="shell命令行"></a>shell命令行</h2><p><strong>补充知识：</strong></p>
+<p>Linux只有根目录，没有C盘，D盘这些概念，要访问需要<strong>挂载</strong></p>
+<p><strong>桥接方式</strong>可以正常上网，</p>
+<p>桌面版有界面</p>
+<p>git命令</p>
+<p>做web开发要用图形界面。</p>
+<p>Linux采用的是树形结构。根目录</p>
+<p>硬件对应的就是一个文件。</p>
+<p>比如说打印机，虚拟文件系统，Linux将硬件和一个文件对应</p>
+<p>Linux比较稳定，比windows稳定。</p>
+<p>shell是在与Linux交互的界面。</p>
+<p>shell维护一个命令库</p>
+<p>shell的类型：</p>
+<p>shell负责和Linux内核进行交互。</p>
+<p>shell命令分类：</p>
+<ul>
+<li>外部命令</li>
+<li>内部命令</li>
+</ul>
+<h4 id="shell的注释："><a href="#shell的注释：" class="headerlink" title="shell的注释："></a><strong>shell的注释</strong>：</h4><p>单行注释和多行注释</p>
+<p>单行注释：# </p>
+<p>多行注释：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> :&lt;&lt;!</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="comment">#被注释的内容</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> !</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf *   #代表删除当前目录下所有文件 rm -rf XX可以删除指定文件</span><br><span class="line">rm -rf .git  # 删除.git文件</span><br></pre></td></tr></table></figure>
+
+<h4 id="git相关"><a href="#git相关" class="headerlink" title="git相关"></a>git相关</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "邮箱@example.com"</span><br></pre></td></tr></table></figure>
+
+
+
+<p>获得命令帮助</p>
+<p>$ man ls  # 用manual，表示用man命令来获取ls 命令的帮助</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">ubuntu安装wget</span></span><br><span class="line">apt-get update  </span><br><span class="line">apt-get install wget  </span><br><span class="line">wget --version  </span><br><span class="line"><span class="meta">#</span><span class="bash">Ubuntu 里的 apt 工具</span></span><br><span class="line"><span class="meta">#</span><span class="bash">apt-get是一条linux命令,适用于deb包管理式的操作系统,主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">tar</span></span><br><span class="line">tar xvfz daq-2.0.6.tar.gz      #xvfz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">pwd</span> 查看目录 <span class="built_in">print</span> working directory</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> --<span class="built_in">enable</span> 是启用软件源码包自带 --<span class="built_in">enable</span>-包名[=arg]，但是默认不启用的功能模块。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装snort</span></span><br><span class="line">tar -xvzf snort-2.9.11.tar.gz</span><br><span class="line">cd snort-2.9.11</span><br><span class="line">./configure --enable-sourcefile</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>解析tar命令行</p>
+<p>-x 或者–extract或者–get 从备份中还原文件</p>
+<p>-v 或者–verbose 显示指令执行过程</p>
+<p>-f &lt;备份文件&gt; 指定备份文件</p>
+<p>-z 或者–gzip或者–ungzip 通过gzip指令处理备份文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> &amp;&amp; 表示前一条命令执行成功时，才执行后一条命令。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Linux 下 make 命令是系统管理员和程序员用的最频繁的命令之一。管理员用它通过命令行来编译和安装很多开源的工具，程序员用它来管理他们大型复杂的项目编译问题。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">ldconfig是一个动态链接库管理命令，为了让动态链接库为系统所共享,还需运行动态链接库的管理命令--ldconfig</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ldconfig</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ln -s /usr/<span class="built_in">local</span>/bin/snort       /usr/sbin/snort</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> snort -V</span></span><br><span class="line">   ,,_     -*&gt; Snort! &lt;*-</span><br><span class="line">  o"  )~   Version 2.9.18.1 GRE (Build 1005)</span><br><span class="line">   ''''    By Martin Roesch &amp; The Snort Team: http://www.snort.org/contact#team</span><br><span class="line">           Copyright (C) 2014-2021 Cisco and/or its affiliates. All rights reserved.</span><br><span class="line">           Copyright (C) 1998-2013 Sourcefire, Inc., et al.</span><br><span class="line">           Using libpcap version 1.8.1</span><br><span class="line">           Using PCRE version: 8.39 2016-06-14</span><br><span class="line">           Using ZLIB version: 1.2.11</span><br><span class="line"><span class="meta">#</span><span class="bash">表明安装成功</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">添加用户组 ，删除：groupdel</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo groupadd snort</span></span><br><span class="line"><span class="meta">#</span><span class="bash">添加用户 ，删除：userdel</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort</span></span><br></pre></td></tr></table></figure>
+
+<p>补充：</p>
+<p>-g 分到指定的用户组</p>
+<p>-c(comments)     备注，加上备注文字</p>
+<p>-r 建立系统账号（root)</p>
+<p>-s 指定用户登录后使用的shell</p>
+<blockquote>
+<p>小知识：</p>
+<blockquote>
+<p>adduser和useradd的区别：</p>
+</blockquote>
+<p>adduser： 会自动为创建的用户指定主目录、系统shell版本，会在创建时输入用户密码。</p>
+<p>useradd：需要使用参数选项指定上述基本设置，如果不使用任何参数，则创建的用户无密码、无主目录、没有指定shell版本。</p>
+</blockquote>
+<p>snort的相关文件:</p>
+<p>etc下面：</p>
+<pre><code>classification.config    : 描述了Snort理解的攻击分类类型（将规则分组为这些类型的分类），例如木马活动或系统调用检测。分类列表可以在Snort手册的第3.4.6节中找到
+file_magic.conf            : 描述了用于标识文件类型的规则
+reference.config        : 包含提供有关警报的更多信息的规则中引用的URL
+snort.conf                : 是Snort的配置文件，它告诉Snort资源的位置，以及如何输出警报等
+threshold.conf            : 允许您控制生成警报所需的事件数，这有助于抑制噪声警报    
+gen-msg.map                : 告诉Snort哪个规则使用哪个预处理器,更多信息在这里。
+unicode.map                : 提供Unicode语言和标识符之间的映,nSnort需要此文件才能启动。</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 它的功能是为某一个文件在另外一个位置建立一个同不的链接，这个命令最常用的参数是-s,具体用法是：ln -s 源文件 目标文件</span></span><br><span class="line">ln -s /usr/local/bin/snort /usr/sbin/snort</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">sudo su 运行sudo命令给su命令提权，运行su命令。要求执行该命令的用户必须在sudoers中才可以。</span></span><br><span class="line">sudo su </span><br><span class="line"><span class="meta">#</span><span class="bash">请输入密码：</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><strong>小知识:</strong></p>
+<blockquote>
+<p>sudo su 和 su区别：</p>
+<p>su是申请root用户，ubuntu，默认没有设置root用户的密码，所以需要我们先使用<code>sudo passwd root</code>设置root用户密码。</p>
+<p>sudo su是转换成管理员</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置root的UNIX的密码，此处设置为123</span></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ sudo passwd root</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo su让输入user的密码</span></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ sudo su</span><br><span class="line">root@LAPTOP-3ITN966I:/# exit</span><br><span class="line">exit</span><br><span class="line"><span class="meta">#</span><span class="bash"> su输入UNIX的密码</span></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ su</span><br><span class="line">Password:</span><br><span class="line">root@LAPTOP-3ITN966I:/# exit</span><br><span class="line"><span class="meta">#</span><span class="bash">我是谁</span></span><br><span class="line">root@LAPTOP-3ITN966I:/# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>-f 强制force</p>
+<p>-r 递归recursive</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="comment">#号表示超级管理员，$号表示基本用户</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Ubuntu中sudo命令，默认创建者就是超级管理员</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> centos进去直接就是超级管理员<span class="comment">#</span></span></span><br><span class="line">hhy@LAPTOP-3ITN966I:~$ ls -a #看到隐藏文件</span><br><span class="line">.   .bash_history  .bashrc  .config  .profile                   .vim      .vscode-server  daq-2.0.7   snort-2.9.18.1</span><br><span class="line">..  .bash_logout   .cache   .local   .sudo_as_admin_successful  .viminfo  .wget-hsts      helloworld</span><br><span class="line"></span><br><span class="line">hhy@LAPTOP-3ITN966I:/$ ls -l</span><br><span class="line">total 416  #指当前目录下所有文件所占用的空间总和，单位为k。可以使用ls –lh或者ls –alh查看。</span><br><span class="line"><span class="meta">#</span><span class="bash">属性.硬链接数.拥有者.所在组.占空间.最近访问时间.文件名</span></span><br><span class="line">drwxr-xr-x   2 root root   4096 Apr 10 11:03 bin</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 boot</span><br><span class="line">drwxr-xr-x   8 root root   2720 Sep  6 21:24 dev</span><br><span class="line">drwxr-xr-x  93 root root   4096 Sep  6 21:24 etc</span><br><span class="line">drwxr-xr-x   3 root root   4096 Apr 10 10:39 home</span><br><span class="line">-rwxr-xr-x   3 root root 632048 Jun 19 12:37 init</span><br><span class="line">drwxr-xr-x  20 root root   4096 Apr 10 11:05 lib</span><br><span class="line">drwxr-xr-x   2 root root   4096 Apr 10 11:03 lib64</span><br><span class="line">drwx------   2 root root  16384 Apr 11  2019 lost+found</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 media</span><br><span class="line">drwxr-xr-x   7 root root   4096 Apr 10 10:38 mnt</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 opt</span><br><span class="line">dr-xr-xr-x 117 root root      0 Sep  6 21:24 proc</span><br><span class="line">drwx------   2 root root   4096 Sep  6 18:46 root</span><br><span class="line">drwxr-xr-x   8 root root    160 Sep  6 21:24 run</span><br><span class="line">drwxr-xr-x   2 root root  12288 Apr 10 11:03 sbin</span><br><span class="line">drwxr-xr-x   2 root root   4096 Jul 10  2020 snap</span><br><span class="line">drwxr-xr-x   2 root root   4096 Aug 22  2020 srv</span><br><span class="line">dr-xr-xr-x  11 root root      0 Sep  6 21:24 sys</span><br><span class="line">drwxrwxrwt   5 root root   4096 Sep  6 12:28 tmp</span><br><span class="line">drwxr-xr-x  10 root root   4096 Aug 22  2020 usr</span><br><span class="line">drwxr-xr-x  13 root root   4096 Aug 22  2020 var</span><br></pre></td></tr></table></figure>
+
+<p>drwxr-xr-x</p>
+<p>directory+ 三个一组（三组）</p>
+<p>第一组：文件所属者</p>
+<p>第二组：</p>
+<p>第三组：</p>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210923092345792.png" alt="image-20210923092345792"></p>
+<p>修改权限：</p>
+<p>chmod</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]# chmod 777 demo</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="安装snort"><a href="#安装snort" class="headerlink" title="安装snort"></a>安装snort</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 从根目录开始 /etc/snort/</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/rules/iplists</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/preproc_rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /usr/local/lib/snort_dynamicrules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /etc/snort/so_rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo touch /etc/snort/rules/iplists/default.balcklist</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo touch /etc/snort/rules/iplists/default.whitelist</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo touch /etc/snort/rules/local.rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /var/log/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo mkdir /var/log/snort/archived_logs</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">利用 chmod 可以藉以控制档案如何被他人所调用。只能文件属主或特权用户才能使用该功能来改变文件存取模式。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">chmod [-cfvR] [--<span class="built_in">help</span>] [--version] mode file...</span></span><br><span class="line"><span class="meta">#</span><span class="bash">调整权限</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /etc/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /var/log/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /var/log/snort/archived_logs</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /etc/snort/so_rules</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chmod -R 5775 /usr/local/lib/snort_dynamicrules</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Linux chown（英文全拼：change owner）命令</span></span><br><span class="line"><span class="meta">#</span><span class="bash">改变文件属主</span></span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chown -R snort:snort /etc/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chown -R snort:snort /var/log/snort</span><br><span class="line">root@LAPTOP-3ITN966I:/home/hhy/snort-2.9.18.1# sudo chown -R snort:snort</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>chmod</p>
+<p>chown</p>
+</blockquote>
+<p>蓝色的是目录文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">root&#x2F;</span><br><span class="line">    bin # 所有用户可用执行文件</span><br><span class="line">    sbin #系统管理员用的执行文件</span><br><span class="line">    boot&#x2F; </span><br><span class="line">    dev #所有设备文件，包括字符设备等</span><br><span class="line">    etc &#x2F; #系统配置文件</span><br><span class="line">        ......</span><br><span class="line">		snort&#x2F;</span><br><span class="line">			preproc_rules  </span><br><span class="line"> 		    rules&#x2F;</span><br><span class="line"> 		    	iplists&#x2F;</span><br><span class="line"> 		    		default.balcklist  </span><br><span class="line">            	    default.whitelist</span><br><span class="line"> 		    	local.rules</span><br><span class="line">            so_rules</span><br><span class="line">    root</span><br><span class="line">    usr&#x2F;</span><br><span class="line">    	bin  #用户命令工具</span><br><span class="line">    	games  </span><br><span class="line">    	include  #C头文件</span><br><span class="line">    	lib  #函数库</span><br><span class="line">    	local  </span><br><span class="line">    	sbin  #系统命令工具</span><br><span class="line">    	share  </span><br><span class="line">    	src  #源代码目录</span><br><span class="line">    mnt	#挂载点Mount point</span><br><span class="line">    home #普通用户的默认管理目录</span><br><span class="line">    lib # 共享库，供&#x2F;bin和&#x2F;sbin的文件使用</span><br><span class="line">    lost+found</span><br><span class="line">    proc #</span><br><span class="line">    run </span><br><span class="line">    snap </span><br><span class="line">    sys </span><br><span class="line">    init </span><br><span class="line">    lib64 </span><br><span class="line">    media </span><br><span class="line">    opt </span><br><span class="line">    srv </span><br><span class="line">    tmp </span><br><span class="line">    var</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/snort3/libdaq/archive/refs/tags/v3.0.4.tar.gz -O libdaq-3.0.4.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 竟然是大写的O</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -O啥意思 file</span></span><br><span class="line"></span><br><span class="line">sudo apt-get install -y</span><br><span class="line"><span class="meta">#</span><span class="bash">       -y, --yes, --assume-yes 默认都yes</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>到底有啥用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ldconfig</span><br><span class="line"><span class="meta">#</span><span class="bash">ldconfig命令的用途：主要是在默认搜寻目录(/lib和/usr/lib)以及动态库配置文件/etc/ld.so.conf内所列的目录下，搜索出可共享的动态链接库(格式如前介绍，lib*.so*)，进而创建出动态装入程序(ld.so)所需的连接和缓存文件。缓存文件默认为 /etc/ld.so.cache，此文件保存已排好序的动态链接库名字列表。</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/06/Linux/">展开全文 >></a>
         </p>
       
 
@@ -312,19 +1226,19 @@
 
 
   
-    <article id="post-python环境配置问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">python环境配置问题</a>
+      <a class="article-title" href="/2020/10/04/python/">python</a>
     </h1>
   
 
         
-        <a href="/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/" class="archive-article-date">
+        <a href="/2020/10/04/python/" class="archive-article-date">
   	<time datetime="2020-10-03T17:18:30.737Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
 </a>
         
@@ -332,7 +1246,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="python环境配置问题"><a href="#python环境配置问题" class="headerlink" title="python环境配置问题"></a>python环境配置问题</h2><p>安装的时候就会提示add path，我安装的时候没选  all users，所以好像配环境变量的时候就配的是用户变量。</p>
+        <h1 id="Python—已迁移到语雀"><a href="#Python—已迁移到语雀" class="headerlink" title="Python—已迁移到语雀"></a>Python—已迁移到语雀</h1><h2 id="人工智能课程"><a href="#人工智能课程" class="headerlink" title="人工智能课程"></a>人工智能课程</h2><p>智能系统中算法要尽可能简单，计算量要尽量小。</p>
+<h2 id="anaconda"><a href="#anaconda" class="headerlink" title="anaconda"></a>anaconda</h2><p>在anaconda创建一个新环境：</p>
+<p><code>conda create -n XX</code></p>
+<p>查看所有环境：</p>
+<p><code>conda env list</code></p>
+<p>删除环境：</p>
+<p><code>conda remove --name  XX</code></p>
+<p>可以使用<code>conda update</code>命令来更新包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update package_name</span><br></pre></td></tr></table></figure>
+
+<p>pip同样支持使用带<code>--upgrade</code>标志来更新包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade package_name</span><br></pre></td></tr></table></figure>
+
+<p>查看库信息</p>
+<p><code>conda list XX</code></p>
+<p><code>nvidia-smi</code> 查看GPU类型，以决定使用什么版本的pytorch。</p>
+<p>到官网查看相应版本，否则</p>
+<h3 id="torch和pytorch的区别："><a href="#torch和pytorch的区别：" class="headerlink" title="torch和pytorch的区别："></a>torch和pytorch的区别：</h3><p>torch 先发展起来，Pytorch是torch的一个python实现。两者都是框架。</p>
+<p>torch目前已经停止发展，而pytorch依旧发展的很好。</p>
+<p>torch使用Lua语言写的，而Pytorch是用python写的。</p>
+<h3 id="安装在Anaconda配置环境"><a href="#安装在Anaconda配置环境" class="headerlink" title="安装在Anaconda配置环境"></a>安装在Anaconda配置环境</h3><p>更换镜像：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels http://mirror.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">conda config --add channels http://mirror.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure>
+
+<p>加入第三方源：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/ </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/ </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/ </span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>切记在官网的命令上去去除：-c pytorch</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=9.0</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>线程数出错：</strong></p>
+<p>Exception in Thread: ValueError: signal number 32 out of range</p>
+<p>num_workers=0就 没问题了,不知道具体原因  （嗯呐呐呐。。。）</p>
+<h2 id="python环境配置问题"><a href="#python环境配置问题" class="headerlink" title="python环境配置问题"></a>python环境配置问题</h2><p>环境配置</p>
+<p>关于用户变量和系统变量的差异：</p>
+<p>系统环境变量对全部用户起作用,而用户环境变量仅仅对当前用户起作用。 </p>
+<p>python环境配置：<br>2020.10.4删除用户变量：应该没啥用了。<br>D；\Python36\Scripts:D:\Python36<br>也删除这个，不知道他有什么用？<br>C:\Users\ASUS\AppData\Local\Programs\Python\Launcher\</p>
+<p>安装的时候就会提示add path，我安装的时候没选  all users，所以好像配环境变量的时候就配的是用户变量。</p>
 <p>暂时不太理解用户变量和系统变量有什么区别。</p>
 <p>他人解释：系统环境变量对所有用户起作用,而用户环境变量只对当前用户起作用。</p>
 <p>不管如何.</p>
@@ -351,109 +1305,154 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">USER_SITE &#x3D; &quot;D:\python\Lib\site-packages&quot;</span><br><span class="line">USER_BASE &#x3D; &quot;D:\python&quot;</span><br></pre></td></tr></table></figure>
 
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/04/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
-
-  
-    <article id="post-Mothod-hexoBlog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/23/Mothod-hexoBlog/">利用hexo搭建博客</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/23/Mothod-hexoBlog/" class="archive-article-date">
-  	<time datetime="2020-06-23T09:10:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h4><h6 id="安装node-js："><a href="#安装node-js：" class="headerlink" title="安装node.js："></a>安装node.js：</h6><p>在官网<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
-<p><strong>Node.js</strong>是一个基于 Chrome V8 引擎的 JavaScript运行环境。</p>
-<h6 id="安装npm-cnpm"><a href="#安装npm-cnpm" class="headerlink" title="安装npm , cnpm"></a>安装npm , cnpm</h6><p><strong>npm</strong>（Node Package Manager）是Node.js下的主流套件管理程式。</p>
-<p><strong>Node</strong> 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言</p>
-<p><strong>cnpm</strong> 淘宝镜像，这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v   #查看的版本</span><br><span class="line">npm -v  #查看版本</span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org #利用这个让hexo框架的下载速度更快</span><br></pre></td></tr></table></figure>
-
-<h6 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h6><p>利用cnpm安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v  #查看版本</span><br><span class="line">cnpm install -g hexo-cli #下载hexo框架</span><br></pre></td></tr></table></figure>
-
-<h6 id="创建一个目录"><a href="#创建一个目录" class="headerlink" title="创建一个目录"></a>创建一个目录</h6><p>这个目录就是专门存储博客的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo -v #查看版本</span><br><span class="line">mkdir blog #创建一个目录blog，文件夹</span><br><span class="line">hexo init #在这个路径下初始化（windows系统上，下载文件到新目录上）</span><br><span class="line"></span><br><span class="line">hexo s  #启动，可以在localhost:4000上访问了。</span><br><span class="line">（ctrl+c断开进行的程序）</span><br><span class="line">dir  #查看本目录中的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hexo s  #启动hexo</span><br><span class="line">hexo clean  #清理</span><br><span class="line">hexo g  #生成</span><br><span class="line">hexo d  #部署到远程的仓库里面。</span><br></pre></td></tr></table></figure>
-
-<h6 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h6><p>创建一个新的repositories：</p>
-<p>   <strong>必须</strong>命名为：自己github账号.github.io      e.g:  hhy150.github.io</p>
-<p>修改配置：</p>
-<p>   特别注意修改的时候每个冒号之后都有一个空格</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改config.yml文件：在deploy下面，修改如下：</span><br><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/hhy150/hhy150.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>  安装关于git的插件，帮助我们推到仓库上</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnmp install --save hexo-deployer-git  #安装一个插件</span><br></pre></td></tr></table></figure>
-
-<p>再执行：</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清理database。</span><br><span class="line">hexo generate  #生成</span><br><span class="line">hexo d    #部署，全称：hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h6 id="修改主题："><a href="#修改主题：" class="headerlink" title="修改主题："></a>修改主题：</h6><ul>
-<li><p>先下载相关文档</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>python3.9已经不兼容Windows7等等，所以不是必须要用python最新版本。</p>
+<p>取消用花括号，而是用缩进来表示，非常地高效。</p>
+<p>命令提示符–windows</p>
+<p>终端————Mac</p>
+<p>苹果电脑自带的是python2，要是用python3（命令直接）</p>
+<p>基本原理:</p>
+<ul>
+<li><p>调度器（控制爬虫的运行</p>
 </li>
-<li><p>再修改配置文件</p>
+<li><p>URL管理器(用于管理需要下载的URL地址)</p>
 </li>
-<li><p>最后远程部署</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在github上https://github.com/litten/hexo-theme-yilia下载</span></span><br><span class="line"><span class="meta">#</span><span class="bash">下载到themes/yilia路径下</span></span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">改变配置文件：</span></span><br><span class="line"><span class="meta">#</span><span class="bash">themes: landscape</span></span><br><span class="line"><span class="meta">#</span><span class="bash">成themes: yilia</span></span><br><span class="line"></span><br><span class="line">hexo s  #启动hexo</span><br><span class="line">hexo clean  #清理</span><br><span class="line">hexo g  #生成静态网页</span><br><span class="line">hexo d  #部署到远程的仓库里面。</span><br></pre></td></tr></table></figure>
-
-<h6 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n "title"</span><br></pre></td></tr></table></figure>
-
-<h6 id="如何更新博客"><a href="#如何更新博客" class="headerlink" title="如何更新博客"></a>如何更新博客</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先在<span class="built_in">source</span>/_posts下的添加文件/修改文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash">或者在命令行到这个目录下创建。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">打开命令窗口</span></span><br><span class="line">d:       #切换到d盘下</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">应该是下列四个步骤，不可以启动后直接hexo d 部署</span></span><br><span class="line">hexo s   #走到blog目录下，启动hexo</span><br><span class="line"><span class="meta">#</span><span class="bash">（Ctrl + c 关闭）</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-
-
+<li><p>下载器</p>
+</li>
+<li><p>解析器</p>
 </li>
 </ul>
+<p>怎么看？？？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">用https:&#x2F;&#x2F;book.douban.com&#x2F;robots.txt作为例子</span><br><span class="line"></span><br><span class="line">User-agent: *  # *代表所有搜索引擎</span><br><span class="line">Disallow: &#x2F;subject_search  #不允许抓取的&#x2F;subject_search以下的文件内容</span><br><span class="line">Disallow: &#x2F;search</span><br><span class="line">Disallow: &#x2F;new_subject</span><br><span class="line">Disallow: &#x2F;service&#x2F;iframe</span><br><span class="line">Disallow: &#x2F;j&#x2F;</span><br><span class="line">Sitemap: http:&#x2F;&#x2F;www.douban.com&#x2F;sitemap_index.xml</span><br><span class="line">                 #Sitemap: 网站地图，告诉爬虫这个页面是网站地图</span><br><span class="line">Sitemap: http:&#x2F;&#x2F;www.douban.com&#x2F;sitemap_updated_index.xml</span><br><span class="line"></span><br><span class="line">#对哦，这为啥会有两个，，，是不是说明如果用这个搜索引擎就有下面的disallow。</span><br><span class="line">User-agent: Wandoujia Spider  # 指定一个搜索引擎</span><br><span class="line">Disallow: &#x2F;</span><br></pre></td></tr></table></figure>
 
+<p>windows系统的是总线结构？无根目录。转到其他盘，不用cd，直接写，转换文件夹采用cd.</p>
+<p>Linux系统是树形结构tree，有根目录.</p>
+<p>格式化输出中的=（等号）比较特殊</p>
+<p>python3.8的特性：</p>
+<p>​         print(f”nihao:{2+3=}”</p>
+<p>命令：</p>
+<p><strong>一切都是对象。</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">id(a) # id标识数字存在的地址</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">数据是一种对象，没有数据类型一说</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">type</span>(<span class="string">"1"</span>)</span></span><br><span class="line">&lt;class 'str'&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">易错：python更贴近人的思维</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; 4&gt;3&gt;2</span></span><br><span class="line">True</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; ch =<span class="string">'a'</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="string">'a'</span>&lt;=ch&lt;=<span class="string">'z'</span> or <span class="string">'A'</span>&lt;=ch&lt;=<span class="string">'Z'</span></span></span><br><span class="line">True</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; a=b=1.5</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; a is b</span></span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; a==b</span></span><br><span class="line">True</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c=2.3</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; d=2.3</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c is d</span></span><br><span class="line">False</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c == d</span></span><br><span class="line">True</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; x,y=3,4</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; x,y=y,x <span class="comment">#多变量赋值是同时进行的</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; x</span></span><br><span class="line">4</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; y</span></span><br><span class="line">3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c=frozenset(&#123;1,2,3&#125;)</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c</span></span><br><span class="line">frozenset(&#123;1, 2, 3&#125;)</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; c.add(4)</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span><br><span class="line">AttributeError: 'frozenset' object has no attribute 'add'</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; [i*5 <span class="keyword">for</span> i <span class="keyword">in</span> range(1,21) <span class="keyword">if</span> i*5%3==0]</span></span><br><span class="line">[15, 30, 45, 60, 75, 90]</span><br></pre></td></tr></table></figure>
+
+<p>字典中的key不可变，所以tuple可以作为key，但是list不可以。</p>
+<p>准确来说，tuple是对应在hash值的，而list没有，因为它在变。</p>
+<p>注意：从键盘输入的东西都是字符串，dei。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fruitPrices = &#123;<span class="string">'apples'</span>:<span class="number">2.00</span>, <span class="string">'oranges'</span>: <span class="number">1.50</span>, <span class="string">'pears'</span>: <span class="number">1.75</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">buyFruit</span><span class="params">(fruit, numPounds)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> fruit <span class="keyword">not</span> <span class="keyword">in</span> fruitPrices:</span><br><span class="line">        print(<span class="string">"Sorry we don't have %s"</span> % (fruit))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        cost = fruitPrices[fruit] * numPounds</span><br><span class="line">        print(<span class="string">"That'll be %f please"</span> % (cost)) <span class="comment"># 1是格式化输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Main Function</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:<span class="comment">#双杠表示一个属性吧。</span></span><br><span class="line">    buyFruit(<span class="string">'apples'</span>,<span class="number">2.4</span>) </span><br><span class="line">    buyFruit(<span class="string">'coconuts'</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>两个很有意思的一个东西：</p>
+<blockquote>
+<p>当另一个函数引用带有<code>if __name__ == &#39;__main__&#39;</code>  ,那么print(name)打印出来的是这个py文件的文件名。但是py文件自己打印的话就打印出来的是main函数名字hh、</p>
+</blockquote>
+<p><img src="C:%5CUsers%5CASUS%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210916192851783.png" alt="image-20210916192851783"></p>
+<blockquote>
+<p> python中注释只有#，双引号和三引号都是字符串，不是注释，但其实可以当做注释来做。</p>
+</blockquote>
+<h4 id="some-tips："><a href="#some-tips：" class="headerlink" title="some tips："></a>some tips：</h4><ul>
+<li><p>After importing a file, if you edit a source file, the changes will not be immediately propagated in the interpreter. </p>
+<p>For this, use the <code>reload</code> command:<code>&gt;&gt;&gt; reload(shop)</code></p>
+</li>
+</ul>
+<p>这个是在python2中，reload函数在imp库中，需要导入才行。</p>
+<h2 id="projects"><a href="#projects" class="headerlink" title="projects"></a>projects</h2><h3 id="1-Pacman"><a href="#1-Pacman" class="headerlink" title="1 Pacman"></a>1 Pacman</h3><p>Depth First Search</p>
+<p>广度优先就是结构不一样。</p>
+<h2 id="人工智能理论："><a href="#人工智能理论：" class="headerlink" title="人工智能理论："></a>人工智能理论：</h2><p>人工智能研究的基本内容包括：</p>
+<ul>
+<li>机器思维</li>
+<li>知识表示：即用一组符号把知识编码成计算机可以接受的某种结构。表示方法不唯一。</li>
+<li>机器学习</li>
+<li>机器感知</li>
+</ul>
+<h3 id="知识表示"><a href="#知识表示" class="headerlink" title="知识表示"></a>知识表示</h3><p>符合主义的观点： 知识是一切智能行为的基础，要使机器具有智能，就必须使它可以理解和使用知识。</p>
+<p>分类：</p>
+<ul>
+<li>确定性知识：可以给出真、假的知识。</li>
+<li>不确定性知识：具有不确定特性（不精确、模糊、不完备）的知识。</li>
+</ul>
+<p>基本表示方法：</p>
+<ul>
+<li>谓词逻辑表示法</li>
+<li>产生式表示法</li>
+<li>语义网络表示法</li>
+<li>框架表示法</li>
+</ul>
+<h4 id="谓词逻辑表示法"><a href="#谓词逻辑表示法" class="headerlink" title="谓词逻辑表示法"></a>谓词逻辑表示法</h4><p>基础：命题、真值、论域、谓词和函数、连词和量词、自由变元和约束变元。</p>
+<p>命题</p>
+<ul>
+<li>断言：一个陈述句是一个断言</li>
+<li>命题：具有真假意义的断言。通常用大写的字母表示</li>
+</ul>
+<p>谓词：通常是形如P(x1,x2,…) 【predicate】</p>
+<p>e.g student(Wang)  表示：Wang是一个学生，Wang是常量。</p>
+<p>Greater(x,6) 表示：x大于6 【6叫做变元】</p>
+<p>Teacher(father(Wang))  ：Wang的father是Teacher。其中father() 是函数。</p>
+<p>谓词与函数的区别：</p>
+<ul>
+<li>谓词是D到{T,F}的映射，函数是D到D的映射。</li>
+<li>谓词可独立存在，但是函数只能作为谓词的个体</li>
+</ul>
+<p>谓词逻辑表示的特征优点:</p>
+<p>一阶谓词是一种接近与自然语言的形式语言系统，谓词逻辑表示发接近与人们对问题的直观理解</p>
+<p>主要缺点：</p>
+<ul>
+<li>存在组合爆炸</li>
+<li>知识库管理困难</li>
+<li>知识表示能力差：只能表示确定性知识。</li>
+</ul>
+<h4 id="产生式表示法"><a href="#产生式表示法" class="headerlink" title="产生式表示法"></a>产生式表示法</h4><p>一个产生式系统由规则库、推理机、综合数据库三部分组成。</p>
+<p><strong>事实:</strong>断言一个语言变量的值或者断言多个语言变量之间关系的陈述句。</p>
+<p>语言变量的值： 比如：“雪是白色的”</p>
+<p>多个语言变量之间关系 ：比如：“王峰热爱祖国”</p>
+<p>通常用三元组或四元组表示事实。</p>
+<p>确定性知识（对象，属性，值） 、（关系，对象1，对象2）</p>
+<p><strong>规则：</strong>基本形式：</p>
+<p>IF P THEN Q 或者 P-&gt;Q</p>
+<p>典型产生式规则案例：动物识别例子</p>
+<p>优点：</p>
+<ul>
+<li>自然性：符合人的判断性知识</li>
+<li>模块性</li>
+<li>有效性：既可以表示确定性，而且可以表示不确定性知识。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>效率低：规则之间的关系必须以综合数据库为媒介。且求解过程是一种反复进行的“匹配—冲突消解—执行”过程。</li>
+<li>不便于表示结构性知识</li>
+</ul>
+<h4 id="语义网络表示法"><a href="#语义网络表示法" class="headerlink" title="语义网络表示法"></a>语义网络表示法</h4><p>可以表示任何事物之间的任意复杂关系。</p>
+<p>基本语义关系是构成复杂语义关系的基石，语义网络表示法的基础。</p>
+<p>基本语义关系：</p>
+<ul>
+<li><p>实例关系ISA（is a）：体现的是“具体与抽象”的概念。表示“是一个”。</p>
+</li>
+<li><p>分类关系AKO（A-kind-Of）： 泛化关系，“子类与超类”的概念，表示“是一种”。</p>
+</li>
+<li><p>成员关系AMF（A-member-of）：“个体与集体”的关系，表示”是一员”。</p>
+</li>
+<li><p>属性关系</p>
+<ul>
+<li>Have</li>
+<li>Can</li>
+</ul>
+</li>
+<li><p>包含关系-聚类关系 ：”部分与整体“，Part-Of</p>
+</li>
+<li><p>时间关系：Before、after</p>
+</li>
+<li><p>位置关系：Located-On、Located-Under</p>
+</li>
+<li><p>相近关系：Similar to、near to</p>
+</li>
+</ul>
+<p>语义网络很适合表示二元关系。</p>
+<h1 id="tensorboard"><a href="#tensorboard" class="headerlink" title="tensorboard"></a>tensorboard</h1><p>可视化界面就是说。</p>
+<p>add_image可以添加图片的配置。</p>
+<p>add_scalar是标量，比如loss可以作为一个指标。【所以为什么加标量？因为是一个数字】</p>
+<h1 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h1><h3 id="autograd"><a href="#autograd" class="headerlink" title="autograd()"></a>autograd()</h3><h1 id="跑代码错误"><a href="#跑代码错误" class="headerlink" title="跑代码错误"></a>跑代码错误</h1><p>1、我本次执行的是在一个进程内依次执代码：上一次wandb上传文件好像失败，我按了Ctrl+C</p>
+<p>216: UserWarning: resource_tracker: There appear to be 6 leaked semaphore objects to clean up at shutdown<br>  warnings.warn(‘resource_tracker: There appear to be %</p>
+<p>但是并不能解决我的问题，通过请教openmmlab的大佬，得到如下回答：“你这是上一次跑出错或者暂停了，然后没清理上次的残留进程。如果不太会的话，每次跑之前killall <a href="https://so.csdn.net/so/search?from=pc_blog_highlight&q=python" target="_blank" rel="noopener">python</a>一下(确保没其他有用的python程序在跑）。”</p>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1>
       
 
       
@@ -465,7 +1464,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/23/Mothod-hexoBlog/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/10/04/python/">展开全文 >></a>
         </p>
       
 
@@ -528,6 +1527,56 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><h3 id="安装步骤："><a href="#安装步骤：" class="headerlink" title="安装步骤："></a>安装步骤：</h3><h6 id="安装node-js："><a href="#安装node-js：" class="headerlink" title="安装node.js："></a>安装node.js：</h6><p>在官网<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+<p><strong>Node.js</strong>是一个基于 Chrome V8 引擎的 JavaScript运行环境。</p>
+<h6 id="安装npm-cnpm"><a href="#安装npm-cnpm" class="headerlink" title="安装npm , cnpm"></a>安装npm , cnpm</h6><p><strong>npm</strong>（Node Package Manager）是Node.js下的主流套件管理程式。</p>
+<p><strong>Node</strong> 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言</p>
+<p><strong>cnpm</strong> 淘宝镜像，这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。”</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v   #查看的版本</span><br><span class="line">npm -v  #查看版本</span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org #利用这个让hexo框架的下载速度更快</span><br></pre></td></tr></table></figure>
+
+<h6 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h6><p>利用cnpm安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v  #查看版本</span><br><span class="line">cnpm install -g hexo-cli #下载hexo框架</span><br></pre></td></tr></table></figure>
+
+<h6 id="创建一个目录"><a href="#创建一个目录" class="headerlink" title="创建一个目录"></a>创建一个目录</h6><p>这个目录就是专门存储博客的。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo -v #查看版本</span><br><span class="line">mkdir blog #创建一个目录blog，文件夹</span><br><span class="line">hexo init #在这个路径下初始化（windows系统上，下载文件到新目录上）</span><br><span class="line"></span><br><span class="line">hexo s  #启动，可以在localhost:4000上访问了。</span><br><span class="line">（ctrl+c断开进行的程序）</span><br><span class="line">dir  #查看本目录中的文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hexo s  #启动hexo</span><br><span class="line">hexo clean  #清理已经生成的public文件</span><br><span class="line">hexo g  #生成  或者hexo generator</span><br><span class="line">hexo d  #部署到远程的仓库里面。</span><br></pre></td></tr></table></figure>
+
+<h6 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h6><p>创建一个新的repositories：</p>
+<p>   <strong>必须</strong>命名为：自己github账号.github.io      e.g:  hhy150.github.io</p>
+<p>修改配置：</p>
+<p>   特别注意修改的时候每个冒号之后都有一个空格</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修改config.yml文件：在deploy下面，修改如下：</span><br><span class="line">deploy:</span><br><span class="line">  type: git </span><br><span class="line">  repo: https://github.com/hhy150/hhy150.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>  安装关于git的插件，帮助我们推到仓库上</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnmp install --save hexo-deployer-git  #安装一个插件</span><br></pre></td></tr></table></figure>
+
+<p>再执行：</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清理database。</span><br><span class="line">hexo generate  #生成</span><br><span class="line">hexo d    #部署，全称：hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h6 id="修改主题："><a href="#修改主题：" class="headerlink" title="修改主题："></a>修改主题：</h6><ul>
+<li>先下载相关文档</li>
+</ul>
+<p>先在github上找到对应的路径：</p>
+<p>例如： <a href="https://github.com/howardliu-cn/hexo-theme-clean-dark.git" target="_blank" rel="noopener">https://github.com/howardliu-cn/hexo-theme-clean-dark.git</a> </p>
+<p>在博客的根目录下输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/howardliu-cn/hexo-theme-clean-dark.git themes/dark</span><br></pre></td></tr></table></figure>
+
+<p>之后就会在themes目录下出现dark文件。</p>
+<ul>
+<li>再修改配置文件</li>
+</ul>
+<p>修改theme 为新下载的dark。</p>
+<ul>
+<li><p>最后远程部署</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">在github上https://github.com/litten/hexo-theme-yilia下载</span></span><br><span class="line"><span class="meta">#</span><span class="bash">下载到themes/yilia路径下</span></span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">改变配置文件：</span></span><br><span class="line"><span class="meta">#</span><span class="bash">themes: landscape</span></span><br><span class="line"><span class="meta">#</span><span class="bash">成themes: yilia</span></span><br><span class="line"></span><br><span class="line">hexo s  #启动hexo</span><br><span class="line">hexo clean  #清理</span><br><span class="line">hexo g  #生成静态网页</span><br><span class="line">hexo d  #部署到远程的仓库里面。</span><br></pre></td></tr></table></figure>
+
+<h6 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n "title"</span><br></pre></td></tr></table></figure>
+
+<h6 id="如何更新博客"><a href="#如何更新博客" class="headerlink" title="如何更新博客"></a>如何更新博客</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">先在<span class="built_in">source</span>/_posts下的添加文件/修改文件</span></span><br><span class="line"><span class="meta">#</span><span class="bash">或者在命令行到这个目录下创建。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">打开命令窗口</span></span><br><span class="line">d:       #切换到d盘下</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">应该是下列四个步骤，不可以启动后直接hexo d 部署</span></span><br><span class="line">hexo s   #走到blog目录下，启动hexo</span><br><span class="line"><span class="meta">#</span><span class="bash">（Ctrl + c 关闭）</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
 
       
 
@@ -802,7 +1851,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 hhy150
+    		&copy; 2022 hhy150
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
